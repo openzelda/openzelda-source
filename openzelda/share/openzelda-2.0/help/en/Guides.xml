@@ -1,0 +1,8 @@
+<?xml-stylesheet href="../common.css"?><div xmlns="http://www.w3.org/1999/xhtml">
+
+<h2>Guides</h2>
+<ul>
+	<li><a href="Guides_CreatingGames.xml">Creating Games</a></li>
+	<li><a href="Guides_CreatingGenres.xml">Creating Genres</a></li>
+</ul>
+</div>

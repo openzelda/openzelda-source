@@ -1,0 +1,51 @@
+# unix/linux makefile by Adam D. Moss <adam@icculus.org> <adam@gimp.org>
+
+# NOTE: AMX seems to require GCC version 3 or later, or you get
+#       lots of assorted compilation errors.
+
+CC = gcc
+
+# pretty optimal (speed and size) for GCC 3.1 on x86
+COPTS = -DASM32 -D__GNUWIN32__ -DNDEBUG -D_CONSOLE -D_MBCS -g0 -Os -Wall
+
+
+#INCS = -I../linux
+ASM = nasmw
+AR = ar
+
+# if you don't have ranlib then you should define RANLIB = true
+RANLIB = F:\Dev-Cpp\bin\ranlib
+# RANLIB = true
+
+# desired resulting .a file name
+ARFILE = libamx.a
+
+# because we're using the FLOATPOINT module
+LDLIBS = -lm
+
+###########################################################
+
+CFLAGS = $(COPTS) $(INCS) 
+
+EXECS = srun
+OBJS = amx.o amxcore.o amxcons.o amxtime.o dfixed.o power.o float.o
+
+
+all: $(ARFILE) $(EXECS)
+
+$(ARFILE): $(OBJS)
+	$(AR) r $(ARFILE) $(OBJS)
+	$(RANLIB) $(ARFILE)
+
+%.o: %.c
+	F:\Dev-Cpp\bin\$(CC) $(CFLAGS) -c $< -o $@
+%.o: %.cpp
+	F:\Dev-Cpp\bin\$(CC) $(CFLAGS) -c $< -o $@
+%.o : %.asm ;
+	F:\Dev-Cpp\bin\$(ASM) -O1 -f coff $<
+
+srun: srun.o $(ARFILE)
+	F:\Dev-Cpp\bin\$(CC) $(CFLAGS) srun.o $(ARFILE) -o srun.exe $(LDLIBS)
+
+clean:
+	rm -f $(ARFILE) $(OBJS) $(WINARFILE) $(WINOBJS) gmon.out

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleVersion</key>
+	<string>1.8</string>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeMIMETypes</key>
+			<array>
+				<string>application/x-open-zelda-quest</string>
+			</array>
+			<key>CFBundleTypeName</key>
+			<string>Quest File</string>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+			<key>CFBundleTypeOSTypes</key>
+			<array>
+				<string>Mokoi</string>
+			</array>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>quest</string>
+			</array>
+		</dict>
+	</array>
+	<key>CFBundleName</key>
+	<string>Open Zelda Player</string>
+	<key>CFBundleExecutable</key>
+	<string>openzelda</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>10.5.0</string>
+	<key>CFBundleDisplayName</key>
+	<string>Open Zelda Player</string>
+	<key>CFBundleGetInfoString</key>
+	<string>Open Zelda Player</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>Open Zelda</string>
+	<key>CFBundleIconFile</key>
+	<string>openzelda-player.icns</string>
+	<key>CFBundleIdentifier</key>
+	<string>net.openzelda.player</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>NSAppleScriptEnabled</key>
+	<false/>
+</dict>
+</plist>

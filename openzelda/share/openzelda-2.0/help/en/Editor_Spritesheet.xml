@@ -1,0 +1,35 @@
+<?xml-stylesheet href="../common.css"?><div xmlns="http://www.w3.org/1999/xhtml">
+	<div class="navbar"><a href="Editor.xml">Editor</a> &gt;</div>
+	<h2>Sprite Sheet Editor</h2>
+
+	<p>Sprite sheets are collection of sprites on a image file, which allows for easy management and editing via 3rd party project.</p>
+	<img src="../images/editor-spritesheet.png" alt=""/>
+	<p>The sprite sheet editor is split in two sections, the right is visual panel use for creating sprites on the current sheet, the left is for adding and remove sheets along with sprite deletion.</p>
+	
+	<h3>Add Sheets</h3>
+	<p>Add a sheet can be done by press the add button and selecting a image file or by dragging and dropping the file. All image files are converted to PNG format.</p>
+	
+	<h4>Quick Creation Dialog</h4>
+	<img src="../images/editor-spritesheet-quickcreate.png" alt=""/>
+	<p>When adding a new sheet the quick creation dialog will pop up. If you sheet made from tiles you set the details in the dialog and it will create sprites for the sheet automatically.</p>
+
+	<h3>Add Sprites and Animation</h3>
+
+	<p>New Sprites can be added by selecting it region then you are in <strong>Create Mode</strong></p>
+	<p>Once the area is selected, the New Sprite/Animation dialog appears, allowing the fine tuning of the dimensions, mask and set a default attached entity. Spiting into Animation fields allows you to take the selected region and split it in to frames either horizontal or vertical.</p>
+	
+	<h3>Editing Sprites</h3>
+	<p>Editing Sprite dialog windows allow you to fine tuning of the dimensions, mask, border and change default attached entity.</p>
+
+	<p>You can also set up to 7 collision rectangle for the sprite which can be use with any entity that uses that sprite with the Scripting function <a href="ScriptAPI_CollisionFromObject.xml">CollisionFromObject</a></p>
+
+	<h3>Editing Animation</h3>
+	<img src="../images/editor-spritesheet-animation.png" alt=""/>
+	<h4>Frames</h4>
+	<p>Each frame can be drag and drop, and can have offset for both axis. </p>
+
+	<h4>Preview</h4>
+	<p>The preview can be update by double clicking on it. Red dots show the offsets of the frames.</p>
+
+
+</div>

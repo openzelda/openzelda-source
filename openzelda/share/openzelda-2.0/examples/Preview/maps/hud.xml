@@ -1,0 +1,42 @@
+<map xmlns="http://mokoi.info/projects/mokoi">
+<settings>
+	<dimensions width="1" height="1" />
+	<color red="128" blue="128" green="128" mode="0" />
+</settings>
+<object value="hud.png:slot" type="sprite">
+	<position x="8" y="8" w="48" h="48" z="0" l="0" r="0" f="0"/>
+	<color red="255" blue="255" green="255" alpha="255" />
+</object>
+<object value="hud.png:life" type="sprite">
+	<position x="384" y="8" w="32" h="16" z="0" l="0" r="0" f="0"/>
+	<color red="255" blue="255" green="255" alpha="255" />
+</object>
+<object value="hud.png:life_bar" type="sprite">
+	<position x="352" y="8" w="32" h="8" z="0" l="0" r="0" f="0"/>
+	<color red="255" blue="255" green="255" alpha="255" />
+</object>
+<object value="hud.png:life_bar" type="sprite">
+	<position x="424" y="8" w="32" h="8" z="0" l="0" r="0" f="0"/>
+	<color red="255" blue="255" green="255" alpha="255" />
+</object>
+<object value="hud.png:arrow" type="sprite">
+	<position x="128" y="16" w="32" h="16" z="0" l="0" r="0" f="0"/>
+	<color red="255" blue="255" green="255" alpha="255" />
+</object>
+<object value="hud.png:rupee" type="sprite">
+	<position x="72" y="16" w="16" h="16" z="0" l="0" r="0" f="0"/>
+	<color red="255" blue="255" green="255" alpha="255" />
+</object>
+<object value="hud.png:bomb" type="sprite">
+	<position x="200" y="16" w="16" h="16" z="0" l="0" r="0" f="0"/>
+	<color red="255" blue="255" green="255" alpha="255" />
+</object>
+<object value="hud.png:key" type="sprite">
+	<position x="256" y="16" w="16" h="16" z="0" l="0" r="0" f="0"/>
+	<color red="255" blue="255" green="255" alpha="255" />
+</object>
+<object value="hearts.png:empty" type="sprite">
+	<position x="320" y="24" w="16" h="16" z="0" l="0" r="0" f="0"/>
+	<color red="255" blue="255" green="255" alpha="255" />
+</object>
+</map>

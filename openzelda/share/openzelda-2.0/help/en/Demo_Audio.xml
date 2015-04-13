@@ -1,0 +1,27 @@
+<?xml-stylesheet href="../common.css"?><div xmlns="http://www.w3.org/1999/xhtml">
+	<div class="navbar"><a href="Demos.xml">Demos</a> &gt; Audio</div>
+	<h2>Audio/File System Demo</h2>
+
+	<p>Just simple audio player that read the the contents of the game's file, directory and patches. Also show off the dialog system.</p>
+	
+	
+	<h3>Script Functions Used</h3>
+	<ul>
+		<li><a href="ScriptAPI_Pawn_AudioPlayMusic.xml">AudioPlayMusic</a></li>
+		<li><a href="ScriptAPI_Pawn_AudioPlaySound.xml">AudioPlaySound</a></li>
+		<li><a href="ScriptAPI_Pawn_DialogShow.xml">DialogShow</a></li>
+		<li><a href="ScriptAPI_Pawn_DialogGetString.xml">DialogGetString</a></li>
+		<li><a href="ScriptAPI_Pawn_DialogPlayAudio.xml">DialogPlayAudio</a></li>
+		<li><a href="ScriptAPI_Pawn_FileGetList.xml">FileGetList</a></li>
+		<li><a href="ScriptAPI_Pawn_SystemAudioVolume.xml">SystemAudioVolume</a></li>
+	</ul>
+
+ 
+ 
+ 
+ 
+ 
+<p></p>
+
+
+</div>

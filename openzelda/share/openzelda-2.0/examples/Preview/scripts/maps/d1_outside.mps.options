@@ -1,0 +1,5 @@
+<entity>
+	<option name="wrap" value="0" type="" />
+	<option name="music" value="Overworld.ogg" type="music" />
+	<option name="name" value="" type="" />
+</entity>

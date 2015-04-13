@@ -1,0 +1,8 @@
+#Global Values
+
+BUILDCUSTOM=TRUE
+CUSTOMSETTINGS=openzelda
+INSTALLDIR?=/opt/openzelda
+BUILDDIR?=../openzelda/bin
+BUILDDEBUG?=TRUE
+SKIPMODULES?=TRUE

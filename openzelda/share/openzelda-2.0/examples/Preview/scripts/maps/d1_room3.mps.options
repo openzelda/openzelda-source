@@ -1,0 +1,7 @@
+<entity>
+	<option name="independent" value="false" type="" />
+	<option name="wrap" value="0" type="" />
+	<option name="music" value="" type="music" />
+	<option name="centerview" value="false" type="" />
+	<option name="name" value="" type="" />
+</entity>

@@ -1,0 +1,154 @@
+<map xmlns="http://mokoi.info/projects/mokoi">
+<settings>
+	<dimensions width="1" height="1" />
+	<color red="128" blue="128" green="128" mode="0" />
+</settings>
+<object value="dungeon01.png:w1" type="sprite">
+	<position x="32" y="96" w="48" h="48" z="2000" l="2" r="0" f="0"/>
+	<color red="255" blue="255" green="255" alpha="255" />
+</object>
+<object value="dungeon01.png:w1" type="sprite">
+	<position x="432" y="96" w="48" h="48" z="1000" l="1" r="90" f="0"/>
+	<color red="255" blue="255" green="255" alpha="255" />
+</object>
+<object value="dungeon01.png:w1" type="sprite">
+	<position x="432" y="336" w="48" h="48" z="1000" l="1" r="180" f="0"/>
+	<color red="255" blue="255" green="255" alpha="255" />
+</object>
+<object value="dungeon01.png:w1" type="sprite">
+	<position x="32" y="336" w="48" h="48" z="1000" l="1" r="270" f="0"/>
+	<color red="255" blue="255" green="255" alpha="255" />
+</object>
+<object value="dungeon01.png:w2" type="sprite">
+	<position x="80" y="96" w="352" h="48" z="1000" l="1" r="0" f="0"/>
+	<color red="255" blue="255" green="255" alpha="255" />
+</object>
+<object value="dungeon01.png:w2" type="sprite">
+	<position x="80" y="336" w="352" h="48" z="1000" l="1" r="180" f="0"/>
+	<color red="255" blue="255" green="255" alpha="255" />
+</object>
+<object value="dungeon01.png:w2" type="sprite">
+	<position x="432" y="144" w="192" h="48" z="2000" l="2" r="90" f="0"/>
+	<color red="255" blue="255" green="255" alpha="255" />
+</object>
+<object value="dungeon01.png:w2" type="sprite">
+	<position x="32" y="144" w="192" h="48" z="1000" l="1" r="270" f="0"/>
+	<color red="255" blue="255" green="255" alpha="255" />
+</object>
+<object value="dungeon01.png:f1" type="sprite">
+	<position x="80" y="144" w="352" h="192" z="0" l="0" r="0" f="0"/>
+	<color red="255" blue="255" green="255" alpha="255" />
+</object>
+<object value="dungeon01.png:d1" type="sprite" id="d1_r6_a">
+	<position x="432" y="192" w="64" h="48" z="3000" l="3" r="90" f="0"/>
+	<color red="255" blue="255" green="255" alpha="255" />
+	<setting key="shut" value="true" type="boolean"/>
+	<setting key="target" value="" type="mapentity"/>
+	<setting key="target_map" value="" type="map"/>
+	<setting key="section" value="" type="section"/>
+	<setting key="closed" value="true" type="boolean"/>
+	<setting key="key" value="0" type=""/>
+	<entity value="door" language="mps" global="false"/>
+</object>
+<object value="dungeon01.png:d1" type="sprite">
+	<position x="32" y="224" w="64" h="48" z="3000" l="3" r="270" f="0"/>
+	<color red="255" blue="255" green="255" alpha="255" />
+	<setting key="shut" value="false" type="boolean"/>
+	<setting key="target" value="" type="mapentity"/>
+	<setting key="target_map" value="" type="map"/>
+	<setting key="section" value="" type="section"/>
+	<setting key="closed" value="false" type="boolean"/>
+	<setting key="key" value="0" type=""/>
+	<entity value="door" language="mps" global="false"/>
+</object>
+<object value="dungeon01.png:f5" type="sprite">
+	<position x="0" y="96" w="32" h="288" z="5000" l="5" r="0" f="0"/>
+	<color red="255" blue="255" green="255" alpha="255" />
+</object>
+<object value="dungeon01.png:f5" type="sprite">
+	<position x="480" y="96" w="32" h="288" z="5000" l="5" r="0" f="0"/>
+	<color red="255" blue="255" green="255" alpha="255" />
+</object>
+<object value="dungeon01.png:f5" type="sprite">
+	<position x="0" y="384" w="512" h="128" z="3000" l="3" r="0" f="0"/>
+	<color red="255" blue="255" green="255" alpha="255" />
+</object>
+<object value="dungeon01.png:f5" type="sprite">
+	<position x="0" y="0" w="512" h="96" z="3000" l="3" r="0" f="0"/>
+	<color red="255" blue="255" green="255" alpha="255" />
+</object>
+<object value="dungeon01.png:b2" type="sprite">
+	<position x="96" y="144" w="320" h="16" z="1000" l="1" r="0" f="0"/>
+	<color red="255" blue="255" green="255" alpha="255" />
+</object>
+<object value="dungeon01.png:b2" type="sprite">
+	<position x="96" y="320" w="320" h="16" z="1000" l="1" r="180" f="0"/>
+	<color red="255" blue="255" green="255" alpha="255" />
+</object>
+<object value="dungeon01.png:b2" type="sprite">
+	<position x="416" y="160" w="160" h="16" z="1000" l="1" r="90" f="0"/>
+	<color red="255" blue="255" green="255" alpha="255" />
+</object>
+<object value="dungeon01.png:b2" type="sprite">
+	<position x="80" y="160" w="160" h="16" z="1000" l="1" r="270" f="0"/>
+	<color red="255" blue="255" green="255" alpha="255" />
+</object>
+<object value="dungeon01.png:b1" type="sprite">
+	<position x="80" y="144" w="16" h="16" z="1000" l="1" r="0" f="0"/>
+	<color red="255" blue="255" green="255" alpha="255" />
+</object>
+<object value="dungeon01.png:b1" type="sprite">
+	<position x="416" y="144" w="16" h="16" z="1000" l="1" r="90" f="0"/>
+	<color red="255" blue="255" green="255" alpha="255" />
+</object>
+<object value="dungeon01.png:b1" type="sprite">
+	<position x="416" y="320" w="16" h="16" z="1000" l="1" r="180" f="0"/>
+	<color red="255" blue="255" green="255" alpha="255" />
+</object>
+<object value="dungeon01.png:b1" type="sprite">
+	<position x="80" y="320" w="16" h="16" z="1000" l="1" r="270" f="0"/>
+	<color red="255" blue="255" green="255" alpha="255" />
+</object>
+<object value="dungeon01.png:new" type="sprite">
+	<position x="240" y="192" w="32" h="32" z="2000" l="2" r="0" f="0"/>
+	<color red="255" blue="255" green="255" alpha="255" />
+</object>
+<object value="dungeon01.png:new" type="sprite">
+	<position x="272" y="224" w="32" h="32" z="2000" l="2" r="0" f="0"/>
+	<color red="255" blue="255" green="255" alpha="255" />
+</object>
+<object value="dungeon01.png:new" type="sprite">
+	<position x="240" y="256" w="32" h="32" z="2000" l="2" r="0" f="0"/>
+	<color red="255" blue="255" green="255" alpha="255" />
+	<entity value="block" language="mps" global="false"/>
+</object>
+<object value="dungeon01.png:new" type="sprite">
+	<position x="208" y="224" w="32" h="32" z="2000" l="2" r="0" f="0"/>
+	<color red="255" blue="255" green="255" alpha="255" />
+</object>
+<object value="switch01.png:1" type="sprite" id="">
+	<position x="240" y="224" w="32" h="32" z="1000" l="1" r="0" f="0"/>
+	<color red="255" blue="255" green="255" alpha="255" />
+	<setting key="off-entity" value="d1_r6_a" />
+	<setting key="on-event" value="OpenDoor" />
+	<setting key="on-entity" value="d1_r6_a" />
+	<setting key="off-event" value="CloseDoor" />
+	<setting key="weighted" value="1" />
+	<entity value="switch" language="mps" global="false"/>
+</object>
+<object value="enemy_bubble.png:1" type="sprite">
+	<position x="336" y="192" w="40" h="40" z="1000" l="1" r="0" f="0"/>
+	<color red="255" blue="255" green="255" alpha="255" />
+	<entity value="enemy_bubble" language="mps" global="false"/>
+</object>
+<object value="enemy_bones01.png:entity" type="sprite">
+	<position x="176" y="160" w="32" h="56" z="3000" l="3" r="0" f="0"/>
+	<color red="255" blue="255" green="255" alpha="255" />
+	<entity value="enemy_bones" language="mps" global="false"/>
+</object>
+<object value="enemy_bones01.png:entity" type="sprite">
+	<position x="352" y="256" w="32" h="56" z="3000" l="3" r="0" f="0"/>
+	<color red="255" blue="255" green="255" alpha="255" />
+	<entity value="enemy_bones" language="mps" global="false"/>
+</object>
+</map>

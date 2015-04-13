@@ -1,0 +1,135 @@
+<?xml-stylesheet href="../common.css"?><div xmlns="http://www.w3.org/1999/xhtml">
+	<div class="navbar"><a href="Scripting.xml">Scripting</a> &gt;</div>
+	<h2>Pawn Variables</h2>
+
+	<p><em>Mokoi uses Pawn as default scripting language, so further references to Pawn will also refer to the default scripting language.</em></p>
+
+	<p>Variables must be declared before they are used in an expression. Pawn is a type-less language, all variables are 'Cell' or a group of 'Cell'. A Cell can hold 32-bit integral number.</p>
+
+
+	<h3>Type of Declarations</h3>
+	<h4>Local declarations</h4>
+	<p>A local declaration appears inside a compound statement. A local variable can only be accessed from within the compound statement, and from nested compound statements. A declaration in the expression of a for loop instruction is also a local declaration. <em>Taken from Pawn's Manual</em></p>
+
+	<h4>Global declarations</h4>
+	<p>A global declaration appears outside a function and a global variable is accessible to any function. Global data objects can only be initialised with constant expressions. <em>Taken from Pawn's Manual</em></p>
+
+	<pre>
+new this_is_a_global; //Any function can access this variables.
+main()
+{
+  new this_is_a_local; //Can only be access in this function.
+}</pre>
+
+	<h4>Static declarations</h4>
+	<p>Static declaration variable are added to global scope.</p>
+	<pre>
+add2Static()
+{
+  //add one to staticvar from main() function
+  staticvar++;
+}
+
+main()
+{
+  new localvar; //Can only in this function.
+  static staticvar; // Statics variable are added to global scope.
+  add2Static();
+}</pre>
+
+	<h4>Stock declarations</h4>
+	<p>Stock declaration variable or function may not be include in the compiled output if they aren't being used.</p>
+
+	<h4>Public declarations</h4>
+	<p>Public declaration function can be access outside of the script, either by the program or other entity. Public entity may also be saved</p>
+
+	<h3>Initialisation</h3>
+	<p>Variables can be initialised at their declaration. Uninitialised data defaults to zero.</p>
+	<p><em>Examples:</em>
+<pre>
+new i = 1 /* i is 1 */
+new j /* j is zero */
+new k = 'a' /* k has character code for letter 'a' */
+new a[] = [1,4,9,16,25] /* a has 5 elements */
+new s1[20] = ['a','b'] /* the other 18 elements are 0 */
+new s2[] = ''Hello world...'' /* a array or unpacked string */
+new s3{} = &quot;Hello world...&quot; /* a string */
+new s4{} = {'H', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd', '.', '.', '.', '\0'}; /* a string */
+
+new a[10] = { 1, ... } // sets all ten elements to 1
+new b[10] = { 1, 2, ... } // b = 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+new c[8] = { 1, 2, 40, 50, ... } // c = 1, 2, 40, 50, 60, 70, 80, 90
+new d[10] = { 10, 9, ... } // d = 10, 9, 8, 7, 6, 5, 4, 3, 2, 1
+</pre>
+	<em>Examples of invalid declarations</em>
+<pre>new c[3] = 4 /* an array cannot be set to a value */
+new i = &quot;Good-bye&quot; /* i must be an array for this initialisers */
+new q[] /* unknown size of array */
+new p[2] = [ i + j, k - 3] /*array initialisers must be constants */
+</pre>
+	</p>
+
+	<h4>Integrals/Numbers</h4>
+	<p>Integrals are the basic variable type in Pawn. These can hold a whole number value between -2,147,483,648 and +2,147,483,647.</p>
+	
+	<h4>Arrays</h4>
+	<p>Arrays are a group of Cells.</p>
+
+	
+	<h4>2D Arrays</h4>
+	<p>2D Arrays are just a Array of Arrays.</p>
+
+	<h4>Symbolic subscripts for arrays</h4>
+	<pre>new msg[.text{40}, .priority] = [ "new message", 1 ];</pre>
+	<p>By initialising a array using a list of names, it will allow the arrays' values to be access by the symbolic name.</p>
+	<pre>msg[.text] = "another message"
+msg[.priority] = 10 - msg[.priority]
+	</pre>
+	<p>In symbolic arrays, the array brackets can be omitted.</p>
+	<pre>
+msg.text = "another message"
+msg.priority = 10 - msg.priority
+	</pre>
+	<pre>
+new field[ .type, /* operator or token type */
+           Rational: .value, /* value, if t_type is "Number" */
+           .word{20} /* raw string */
+         ]
+	</pre>
+	<h4>Strings</h4>
+	<p>A string is just a array with a terminating 0. Characters are stored as UTF-8 in the array.</p>
+	<p>Each Cell store the ASCII character value (7bit), since each Cell can hold a 32bit value, so Pawn takes advanced of that and stores multiply character value in one Cell.</p>
+	<pre>
+// Valid Examples
+new a0{6} = &quot;valid&quot;;
+new a1{6} = {'v', 'a', 'l', 'i', 'd', 0 };
+new a2{6} = {118, 97, 108, 105, 100, 0 };
+	</pre>
+	<h4>Tagged Variables. Floats, Fixed, Boolean and other.</h4>
+	<p>To get around the fact the Pawn only has one type, Variables can be tagged to emphasize their usage. This is done by adding type name follow by a ':' before the varible name. Tags can be discarded by using '_:' before the varible.</p>
+
+	<h4>Bit manipulation</h4>
+	<pre>
+BitSet( &amp;v, n )
+{
+  v |= (1 &lt;&lt; n);
+}
+
+BitClear( &amp;v, n )
+{
+  v &amp;= ~(1 &lt;&lt; n);
+}
+
+BitToggle( &amp;v, n )
+{
+  v ^= (1 &lt;&lt; n);
+}
+
+BitTest( v, n )
+{
+  return !!(v &amp; (1 &lt;&lt; n));
+}
+	</pre>
+
+
+</div>

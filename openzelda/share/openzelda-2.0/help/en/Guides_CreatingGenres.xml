@@ -1,0 +1,82 @@
+<?xml-stylesheet href="../common.css"?><div xmlns="http://www.w3.org/1999/xhtml">
+	<div class="navbar"><a href="Guides.xml">Guides</a> &gt;</div>
+
+	<h2>Creating Genres</h2>
+	<p>Design notes on how to handle game design.</p>
+
+	<h3>Platformer</h3>
+	<img src="../images/genre-platform.png" alt=""/> <img src="../images/genre-platform-mask.png" alt=""/>
+	<p>A Map and it's underlying mask.</p>
+	<p>To create a Platformer, the mask system is important as it can be used a invisible guide for Objects. In the above image, Red would be class as a solid, Blue would use both mask and collision system.</p>
+
+	
+	<h4>Scripting</h4>
+	<p><a href="Scripting_Pawn_MaskGetValue.xml">MaskGetValue</a>(x, y), along with floatsin &amp; floatcos will be the functions using in a platformer. <a href="Scripting_Pawn_MaskGetValue.xml">MaskGetValue</a> will return a value between 0-255.</p>
+	
+	<h3>Beat'em Ups</h3>
+	<img src="../images/beat-em-up.png" alt=""/>
+	<p>When Attacking, check for collision in the hit zone then check if it falls into the 'h' value.</p>
+	<p>Known Issues: Map Editor isn't design to handle delayed enemy loading.</p>
+	
+	<h3>Top-down Adventure/RPG</h3>
+	<p>to be added...</p>
+	
+	<h3>RPG (Turn Based)</h3>
+
+	<h4>Overview/Movement</h4>
+	<p>Change x/y with cos/sin. Check mask to see if the player can go there. Collisions can handle events.</p>
+	
+	<h4>Combat</h4>
+	<p>- Simple Menu Selection or Button Selection.</p>
+
+	<pre>
+/* Simple Turn Timer battle code */
+#define character [.entity{40},.countdown]
+
+const MAX_CHARACTERS = 6;
+
+new chars[MAX_CHARACTERS][character];
+new turn = -1;
+main()
+{
+	if ( turn == -1)
+	{
+		// Countdown Check
+		new n = 0;
+		while ( n &lt; MAX_CHARACTERS )
+		{
+			if ( chars[n].entity{0} )
+			{
+				if ( TimerCountdown( chars[n].countdown ) )
+				{
+					turn = n;
+				}
+			}
+			n++;
+		}
+	}
+	else
+	{
+		// Show Menu or Enemies attack
+		if ( AttackFinished() ) //Call a public Function
+		{
+			chars[turn].countdown = GetOriginalTime(); //Call a public Function
+			turn = -1;
+			//You should also check for characters status.
+
+		}
+	}
+}
+	</pre>
+	<h4>Moves/attacks</h4>
+	<p>Uses a standardize function call. Return 1 if function has finished.</p>
+
+	<h3>Real Time Strategy</h3>
+	<p>At this present time, Mokoi doesn't offer fine enough AI control. Try Stratagus http://www.stratagus.org/ instead.</p>
+	
+	<h3>Grid Base Turn based Strategy</h3>
+	<p>to be added...</p>
+
+
+
+</div>

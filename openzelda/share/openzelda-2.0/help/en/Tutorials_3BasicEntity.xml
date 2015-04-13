@@ -1,0 +1,38 @@
+<?xml-stylesheet href="../common.css"?><div xmlns="http://www.w3.org/1999/xhtml">
+	<div class="navbar"><a href="Tutorials.xml">Tutorials</a> &gt;</div>
+	<h2>Tutorial: Basic Entity</h2>
+	
+	<h3>Step 1</h3>
+	<p>Using the <a href="Tutorials_2UsingGraphics.xml">Previous Tutorial</a> as the starting point, switch over to Entity Scripts and click the Add button</p>
+	
+	<h3>Step 2</h3>
+	<p>Now you can open up firstentity.mps</p>
+	
+	<h3>Step 3</h3>
+	<pre>
+/* Initialise Three Fixed valiables to hold position */
+new Fixed:x = 0.00;
+new Fixed:y = 0.00;
+new Fixed:z = 0.00;
+
+/* We want to get the position on entity start up, so we use the Init function */
+public Init(...)
+{
+  /* We want to store, position for current entity to x, y variables. A empty sting access current entity, other wise you could use a entity ID to get it's position  */
+  EntityGetPosition(x, y, z);
+  /* You can get the Display Object store on the map by using EntityGetSetting, more on that on next tutorial */
+}
+
+main()
+{
+  /* Draw object to screen each frame frame */
+  GraphicsDraw(&quot;tutorial-sheet1.png:2&quot;, SPRITE, fround(x)+5, fround(y)+5, z -1.0, 0, 0, BLACK ); /* See Scripting Interface for info on Draw Function */
+  // ^ highlight Function and press F1 to open up Help 
+}</pre>
+	<p>This is a simple entity to get the entity position and to draw to the screen.</p>
+	
+	<h3>Step 4</h3>
+	<p>Now with the Entity created, you can now attach it to a display object on the map. Open up the Object's Advance Settings and check the entity check box, then select firstentity.mps</p>
+
+
+</div>

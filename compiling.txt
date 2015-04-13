@@ -1,0 +1,27 @@
+
+Requirements
+============================
+
+Compiler
+----------------------------
+Any modern GCC would work, LLVM might also.
+
+
+Windows Compilers: 
+TDM-GCC
+http://tdm-gcc.tdragon.net/
+-or - 
+Qt for Windows 32-bit (MinGW)
+http://www.qt.io/download-open-source/
+
+Windows also requires MSYS 
+http://sourceforge.net/projects/mingw/files/MSYS/
+
+
+Libraries
+----------------------------
+- SDL 2.0.3*
+- SDL_Mixer 2.0.0*
+- GTK+ 2.20 / GTK+ 3.8
+- GtkSourceView  (Not required)
+- libcurl  (Not required)

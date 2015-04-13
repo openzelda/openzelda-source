@@ -1,0 +1,27 @@
+<?xml-stylesheet href="../common.css"?><div xmlns="http://www.w3.org/1999/xhtml">
+	<div class="navbar"><a href="Tutorials.xml">Tutorials</a> &gt;</div>
+	<h2>Tutorial: Using Graphics</h2>
+	<h3>Step 1 - Starting</h3>
+	<p>Start the Editor and Create an New Game. Make sure you give it a Title.</p>
+
+	<h3>Step 2 - Import Graphics</h3>
+	<img src="../images/sheet-selection.png" alt=""/>
+	<p>Switch to the Spritesheet Editor component, and click on the add button, as see in image to the right.</p>
+
+	<p>Now you can select a image file you wish to import, for this tutorial we offer a very basic image for that. Just save the following image to your computer. </p>
+	<p><img src="../images/tutorial-sheet1.png" alt=""/><em>http://mokoi.github.io/mokoi-docs/images/tutorial-sheet1.png</em></p>
+
+	<p>Following sheet selection, the Quick Create Dialog pops up. If the sheet you are importing is not made of uniformed sized tiles you can just skip this, but in this case we are, so you can set Tile Dimensions to 32x32. <em>PNG can also be drag and drop on to the editor</em></p>
+	<img src="../images/sheet-quick-create.png" alt=""/>
+
+	<h3>Step 3 - Opening  'empty' map</h3>
+	<p>Switch over to Map Editor and open the 'empty' map</p>
+	
+	<h3>Step 4 - Editing a map</h3>
+	<p>Now you can add content to the map. Select Map Object combo box and tutorial-sheet1.png. You should have <img src="../images/tutorial-sheet1.png" alt=""/> sprite list here, so double click on the red bricks then click and drag on the map to place on the map. You can toggle 'align to grid' to place sprite evenly. You can also add Text, Rectangles, lines and circle by selecting Shapes on the Map Object combo box.</p>
+	
+	<h3>Step 5 - The Result</h3>
+	<p><img src="../images/Tutorial-002-HelloGraphics.png" alt=""/></p>
+
+
+</div>

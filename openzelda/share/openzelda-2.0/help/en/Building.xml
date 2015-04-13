@@ -1,0 +1,16 @@
+<?xml-stylesheet href="../common.css"?><div xmlns="http://www.w3.org/1999/xhtml">
+	<h2>How to Build</h2>
+	<p>First check out the latest code from the Git</p>
+	<pre>git clone git://git.code.sf.net/p/mokoi/source mokoi-source</pre>
+	<p>Then you can run make to build the important parts of Mokoi.</p>
+	<pre>
+cd mokoi-source
+make all
+	</pre>
+	<p>Note: If you not building for the system your on, you must set BUILDOS variable before running Make</p>
+	<pre>
+export BUILDOS=dreamcast
+make all
+	</pre>
+	<p>* note: windows users would set instead of export.</p>
+</div>

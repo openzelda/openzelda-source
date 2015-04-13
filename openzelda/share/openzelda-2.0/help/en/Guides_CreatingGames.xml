@@ -1,0 +1,21 @@
+<?xml-stylesheet href="../common.css"?><div xmlns="http://www.w3.org/1999/xhtml">
+	<div class="navbar"><a href="Guides.xml">Guides</a> &gt; </div>
+	<h2>Creating Games</h2>
+	<p>For the time being, we recommend looking at the include demos, which is located in the 'share/mokoi-1.0/examples' directory, and the <a href="Tutorials_1HelloWorld.xml">Hello World</a> example game to get the hang of how Mokoi Games work. For a list of available functions please look at <a href="Scripting_Pawn.xml">Game Scripting page</a>.</p>
+	
+	<h2>Tutorials</h2>
+	<ul>
+		<li><a href="Tutorials_1HelloWorld.xml">Tutorial 1: Hello World</a></li>
+		<li><a href="Tutorials_2UsingGraphics.xml">Tutorial 2: Using Graphics</a></li>
+		<li><a href="Tutorials_3BasicEntity.xml">Tutorial 3: Basic Entity</a></li>
+		<li><a href="Tutorials_4MovingEntity.xml">Tutorial 4: Moving Entity</a></li>
+		<li><a href="Tutorials_5TalkingToOtherEntity.xml">Tutorial 5: Talking To Other Entity</a></li>
+	</ul>
+	
+	<h2>Example Games</h2>
+	<ul>
+		<li><a href="Tutorials_BasicInvaders.xml">Basic Invaders</a></li>
+		<li><a href="Demo_puttytris.xml">Puttytris</a></li>
+	</ul>
+
+</div>

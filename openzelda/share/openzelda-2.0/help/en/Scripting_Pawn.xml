@@ -1,0 +1,87 @@
+<?xml-stylesheet href="../common.css"?><div xmlns="http://www.w3.org/1999/xhtml">
+	<div class="navbar"><a href="Scripting.xml">Scripting</a> &gt;</div>
+	<h2>Pawn Scripting Language</h2>
+	<ul>
+		<li><a href="Scripting_Pawn_Syntax.xml">Syntax</a></li>
+		<li><a href="Scripting_Pawn_Functions.xml">Functions</a></li>
+		<li><a href="Scripting_Pawn_Variables.xml">Variables</a></li>
+		<li><a href="Scripting_Pawn_ErrorCodes.xml">Error Codes</a></li>
+		<li><a href="Scripting_Pawn_Operators.xml">Operators and Expressions</a></li>
+		<li><a href="Scripting_Pawn_Statements.xml">Statements</a></li>
+	</ul>
+
+	<h3>Scripting Internal Types (Tagged Variables)</h3>
+	<p><strong>object</strong>: Display Objects are permanent graphics on the display list which can be access via entities.</p>
+	<p><strong>entity</strong>: Entity ID.</p>
+	<p><strong>Fixed</strong>: Varible rep.</p>
+	<p><a href="Scripting_Pawn_Variables.xml">More on Tagged Variables</a></p>
+
+	<h3>GraphicTypes</h3>
+	<ul>
+		<li>SPRITE</li>
+		<li>RECTANGLE</li>
+		<li>LINE</li>
+		<li>TEXT</li>
+		<li>POLYGON</li>
+		<li>CIRCLE</li>
+		<li>CANVAS</li>
+	</ul>
+
+	<h3>StyleTypes</h3>
+	<ul>
+		<li>STYLE_NORMAL <img src="../images/style_normal.png" alt=""/></li>
+		<li>STYLE_VGRADIENT <img src="../images/style_vgradient.png" alt=""/></li>
+		<li>STYLE_HGRADIENT <img src="../images/style_hgradient.png" alt=""/></li>
+		<li>STYLE_GLOW <img src="../images/style_glow.png" alt=""/></li>
+		<li>STYLE_OUTLINE <img src="../images/style_outline.png" alt=""/></li>
+		<li>STYLE_REPLACECOLOUR <img src="../images/style_replace.png" alt=""/></li>
+		<li>STYLE_NEGATIVE <img src="../images/style_negative.png" alt=""/></li>
+	</ul>
+
+	<h3>Directions</h3>
+	<ul>
+		<li>SOUTH</li>
+		<li>SOUTHEAST</li>
+		<li>EAST</li>
+		<li>NORTHEAST</li>
+		<li>NORTH</li>
+		<li>NORTHWEST</li>
+		<li>WEST</li>
+		<li>SOUTHWEST</li>
+	</ul>
+	<h3>AudioDevice</h3>
+	<div>Allow control over audio output. Currently only allows volume changing.</div>
+	<ul>
+		<li>SOUNDFX</li>
+		<li>MUSIC</li>
+	</ul>
+
+	<h3>All Entity Entry Points</h3>
+	<p>The game will call certain function in the entity scriptm so the game is able to run.</p>
+	<h4>main() </h4>
+	<p>The 'main' function is the main entry point to each entity. This is called each frame.</p>
+
+	<h4>Init(...)</h4>
+	<p>The 'Init' function is called on the entity when created. For local/map entities this is also called each loading of the map.</p>
+
+	<h4>Close()</h4>
+	<p>The 'Close' function is called on the entity when deleted. For local/map entities this is also called each closing of the map.</p>
+
+	<h4>UpdatePosition()</h4>
+	<p>The 'UpdatePosition' function is called on Global entities when switching maps. The main use for these to change the position of the display objects handle by the entity.</p>
+
+	<h3>Main Entity Entry Points</h3>
+	<p>The main entity is required for games to work. The main entity has a couple of entry points to allow scripting enhancements.</p>
+
+	<h4>save()</h4>
+	<p>Called before the game state is saved.</p>
+
+	<h4>load()</h4>
+	<p>Called before the game state is loaded.</p>
+
+	<h3>Custom Entry Points</h3>
+	<h4>KeyboardInput(unicode)</h4>
+	<p>When KeyboardWatch is used in a entity, all keyboard input is sent to this function.</p>
+
+
+</div>

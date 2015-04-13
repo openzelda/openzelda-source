@@ -1,0 +1,38 @@
+<?xml-stylesheet href="../common.css"?><div xmlns="http://www.w3.org/1999/xhtml">
+	<div class="navbar"><a href="v.xml">Editor</a> &gt;</div>
+	<h2>Map Editor</h2>
+	
+	<h3>Shortcuts Keys</h3>
+	<ul>
+		<li>0-9 keys - Change the Layer.</li>
+		<li>F - Flip Selected Object.</li>
+		<li>Space - Rotate Selected Object 90 degrees.</li>
+		<li>Arrow Keys - Move Selected Object.</li>
+		<li>Shift + Arrow Keys - Tile Selected Object.</li>
+		<li>Shift + Click - Continue adding object.</li>
+	</ul>
+	
+	<h3>Toolbar</h3>
+	<img src="../images/editor-map-toolbar.png" alt=""/>
+	<ul>
+		<li>Save</li>
+		<li>Current Layer (Also changeable with 0-9 keys)</li>
+		<li>Current Layer Display Toggle</li>
+		<li>Zoom In</li>
+		<li>Zoom Original</li>
+		<li>Zoom Out</li>
+		<li>Align to Grid</li>
+	</ul>
+	
+	<h3>Display Object Sidebar</h3>
+	<img src="../images/editor-map-sidebar.png" alt=""/>
+	<p>Display Object groups ( include Sprite sheets ) can be change by using the combo box.</p>
+	<p>Display Object can be selected by double clicking or by pressing enter.</p>
+
+
+	<h3>Map Options</h3>
+	<img src="../images/editor-map-settings.png" alt=""/>
+	<p>Wrap: Allow the map to wrap around selectable axis</p>
+
+
+</div>

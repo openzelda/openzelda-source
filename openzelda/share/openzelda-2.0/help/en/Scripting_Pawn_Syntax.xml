@@ -1,0 +1,74 @@
+<?xml-stylesheet href="../common.css"?><div xmlns="http://www.w3.org/1999/xhtml">
+<div class="navbar"><a href="Scripting.xml">Scripting</a> &gt;</div>
+	<h2>Pawn Syntax</h2>
+	<p>This is the boring part, therefore I'll go over it as quickly as humanly impossible while trying to keep it informative. First, I'll have to make one thing clear, 'A' is not 'a', 'Main()' would give you an error, 'main()' would not.</p>
+	<p>With that out of the way, I'll give you some examples, I'll draw up a function:</p>
+	<pre>#include &lt;game&gt;        //An include file
+new variable = 0;      // Create a global variable
+main()                 // A function header
+{                      // A start bracket
+  if(variable == 0)    // If 'variable' equals zero
+  {
+     variable = 1;     // Set 'variable' to 1
+  }
+  else                 // If 'variable' does not equal zero
+     variable = 0;     // Set 'variable' to 0
+}                      // An ending bracket
+</pre>
+	<p>I'll start by saying that this code is completely useless whatsoever, BUT, it fills one purpose, as it displays a lot of syntax in Pawn.</p>
+	<p>Look at the first line.</p>
+	<pre>#include &lt;game&gt;  //An include file</pre>
+	<p>'#' tells us that this is a compiler function, which means that the compiler will do something here. <br/>
+		<em>&quot;include &lt;game&gt;&quot;</em> is what is told to the compiler. It's supposed to include a file, in this case, a file called &quot;game.inc&quot;. The '.inc' is not required, as it is a default extension.
+	</p>
+	<p>After a &quot;//&quot;, everything is ignored, that means that the rest of that line is commented out, and is ignored when the entity is compiled.</p>
+	<p>&quot;new variable = 1;&quot; This initializes a variable, &quot;A short identification containing a number&quot;.</p>
+	<p>&quot;new&quot; indicates that it's creating a variable, not reading from it. &quot;variable&quot; is it's name.</p>
+	<p>In this case, we want it to be created with a value, therefore, we directly use &quot;= 1&quot; to give it this value.</p>
+	<p>A similar allowed version, would be <br/>
+		<em>&quot;new variable;&quot;</em> <br/>
+		<em>&quot;new variable = 32203798;&quot;</em> <br/>
+		Or whatever.
+	</p>
+
+	<p>What you, on the other hand, cannot do, is try to create a variable without the 'new' command in front of it. Omitting this, would make the program try to read and edit the variable, instead of creating it.</p>
+	<p>For example, placing only &quot;variable = 320;&quot; without first using &quot;new variable;&quot; would produce an error.</p>
+	<p>Also, a variable cannot be modified outside a function, except when being created.</p>
+	<p>Notice as well, how everything is ended with &quot;;&quot;. this is good practice, as errors may occur if you do not use these definite endings.</p>
+
+	<p>And a function is what we will get to now:
+		<pre>main()
+{
+Stuff...
+}
+		</pre>
+		<em>&quot;main&quot;</em> is the name of the function we are now creating, notice how it is lower-case, this is normal in most programming languages today. <br/>
+		() contains information that can be sent to the function, you create variables in these brackets that store information sent to the function when it is called, these are always needed, even if there is no information to be retrieved.
+	</p>
+	<p>An opposite example would be:''
+		<pre>
+main(//new number//)
+{
+Stuff...
+}
+		</pre>
+		This would create a function called main, that accepts 1 piece of information, in this case, following what it looks like, it would accept a variable number, as it would be created in the same way as the variable we created earlier.
+	</p>
+	<p>But, in this particular function, we will NEVER add variables that it can accept. the main() function is called in all scripts in the game, allowing them to execute. What good would ThisFunction() do if it was never called from somewhere?</p>
+
+	<p>One more thing. <br/>
+		&quot;{}&quot;. these hold the code in a function.
+		<pre>
+main()
+{
+//Anything HERE, is inside the function, as it is between the brackets.
+}
+		</pre>
+	</p>
+
+	<p>Notice how the header uses (), while the code in the function is surrounded by {}, always remember this, as anything else will produce a large amount of nasty errors.</p>
+
+	<p>This isn't everything, but it should be enough to get you started when looking at scripts or writing them yourself.</p>
+
+
+</div>

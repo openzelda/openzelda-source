@@ -1,0 +1,10 @@
+<?xml-stylesheet href="../common.css"?><div xmlns="http://www.w3.org/1999/xhtml">
+	<div class="navbar"><a href="Editor.xml">Editor</a> &gt; </div>
+	<h2>Language Editor</h2>
+	<p>The language editor allow you to manage the Dialog text and Code strings for your game in multiple languages. </p>
+	<p>Initial, you will have the 'lang\00.txt' and 'dialog\00.txt' loaded and these will act as the base for other languages as well. </p>
+	<p>If you wish to support more that language in your game, Set the configuration option 'language.available' to list of languages separated by |. example: en|de|fr </p>
+	<p>Support of non-english languages is very low, due the developer only knowing English, any help would be appreciated.</p>
+
+
+</div>

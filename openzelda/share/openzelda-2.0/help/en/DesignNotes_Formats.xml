@@ -1,0 +1,222 @@
+<?xml-stylesheet href="../common.css"?>
+<div xmlns="http://www.w3.org/1999/xhtml">
+	<div class="navbar"><a href="DesignNotes">Design Notes</a> &gt; </div>
+
+	<h2>Formats</h2>
+	<p>Mokoi Games are a Platform Neutral Video Games Format. Currently only one working implementation has been made (<a href="http://mokoi.info/projects/luxengine/">&quot;Lux Engine&quot;</a>), though 2 more in development (<a href="http://mokoi.info/projects/lightbulb">Lightbulb</a> and <a href="http://mokoi.info/projects/HTML5">&quot;HTML5&quot;</a>)</p>
+
+
+	<h2>Resource Formats</h2>
+	<p>Mokoi Gaming uses similar formats for Games, Packages and Patches files. Each has a unique header followed with each individual files/</p>
+
+	<h3>Individual File Listing</h3>
+	<pre>
+	uint16_t filename_length;
+	uint8_t * filename; //Uses filename_length for size
+	uint32_t file_size_length;
+	uint32_t compressed_size_length;
+	uint8_t * data; //Uses compressed_size_length for size
+	</pre>
+
+	<h3>Game Header</h3>
+	<pre>
+	uint8_t[8] magic = {137, 'M', 'o', 'k', 'o', 'i', '1', 10}; // - magic[6] stores the file version
+	uint8_t[256] name;
+	uint32_t id;
+	uint32_t logo_length; // png logo length
+	uint8_t * logo; // png logo data
+	uint32_t CRC; // Not Used yet
+	</pre>
+
+	<h3>Package Header</h3>
+	<p></p>
+
+	<h3>Patch Header</h3>
+	<p></p>
+
+	<h2>Game Structure &amp; File Formats</h2>
+
+	<h3>Folders</h3>
+	<ul>
+		<li>dialog - <em>Stores Language files as text files and speech files in OGG formatted audio files</em></li>
+		<li>lang - <em>Stores Language files as text files</em></li>
+		<li>maps - <em>XML Maps files</em></li>
+		<li>worlds -<em>TSV to define each section.</em></li>
+		<li>scripts - <em>Game &amp; Map Entities</em></li>
+		<li>sprites - <em>PNG Images and XML sheet info</em></li>
+		<li>soundfx - <em>Audio files</em></li>
+		<li>music - <em>Audio files</em></li>
+	
+	</ul>
+
+	<h3>game.mokoi</h3>
+	<p>Store in the root folder, game.mokoi is a INI-like format, that stores the game setting.</p>
+
+	<h4>Example</h4>
+	<pre>[Mokoi]
+project.title=Mokoi Test Game
+project.id=testgame
+player.number=1
+map.width=512
+map.height=384
+screen.width=320
+screen.height=240
+project.language=en
+	</pre>
+
+	<h3>Map Section</h3>
+	<p>Map Section are a Tabbed Separated Values (TSV) text file, which stores map locations on a grid. </p>
+	<p>Values for the TSV are 'Map', 'Grid X', 'Grid Y'</p>
+	<h5>Example</h5>
+	<p><em>Tabs may not be visible</em></p>
+	<pre>
+title    0    0
+display    2    0
+camera    4    0
+input    6    0
+collision    8    0
+entity    10    0
+audio     12    0
+save     14    0
+	</pre>
+	
+
+	<h3>Dialog &amp; Language</h3>
+	<p>Strings are stored on a individual line. An '\n' can be use if you require a line break.</p>
+	<p>Files are name with the two letter language code, with 00.txt acting as a Key file which is also exported to a script routine.</p>
+	<p>Ogg Vorbis is used for audio dialog.</p>
+	<h4>Special Characters</h4>
+	<p>Certain characters will be replace with a Controller Icon or set the colour of the text.</p>
+
+	<h5>Colours</h5>
+	<p>The § symbol followed by a value will colourise the next word.</p>
+
+	<p>§0	Black</p>
+	<p>§1	Dark Blue</p>
+	<p>§2	Dark Green</p>
+	<p>§3	Dark Aqua</p>
+	<p>§4	Dark Red</p>
+	<p>§5	Dark Purple</p>
+	<p>§6	Gold</p>
+	<p>§7	Gray</p>
+	<p>§8	Dark Gray</p>
+	<p>§9	Blue</p>
+	<p>§a	Green</p>
+	<p>§b	Aqua</p>
+	<p>§c	Red</p>
+	<p>§d	Light Purple</p>
+	<p>§e	Yellow</p>
+	<p>§f	White</p>
+
+	<h5>Controller Button</h5>
+	<p>❶ ❷ ❸ ❹ ❺ ❻ ❼ ❽ ❾ ❿ ➀ ➁ ➂ ➃ ➄ ➅</p>
+	<h5>Controller Axis (Primary - Secondary)</h5>
+	<p><strong>y</strong> ▲/▼ △/▽</p>
+	<p><strong>x</strong> ◀/▶ ◁/▷</p>
+	<p><strong>z</strong> ◐/◑ ◒/◓</p>
+
+	<h3>Maps</h3>
+
+	<p>Map files are in a XML format.</p>
+	<h5>Example of a map file</h5>
+	<pre>&lt;map xmlns=&quot;http://mokoi.info/projects/mokoi&quot;&gt;
+	&lt;settings&gt;
+		&lt;dimensions width=&quot;1&quot; height=&quot;1&quot; /&gt;
+		&lt;color red=&quot;0&quot; blue=&quot;4&quot; green=&quot;96&quot; mode=&quot;0&quot; /&gt;
+		&lt;option name=&quot;name&quot; value=&quot;&quot; type=&quot;&quot; /&gt;
+	&lt;/settings&gt;
+	&lt;object value=&quot;Inline Text&quot; type=&quot;text&quot;&gt;
+		&lt;position x=&quot;2&quot; y=&quot;2&quot; w=&quot;84&quot; h=&quot;9&quot; z=&quot;4000&quot; l=&quot;4&quot; r=&quot;0&quot; f=&quot;0&quot;/&gt;
+		&lt;color red=&quot;255&quot; blue=&quot;255&quot; green=&quot;255&quot; alpha=&quot;255&quot; /&gt;
+		&lt;setting key=&quot;number&quot; value=&quot;-1&quot; /&gt;
+	&lt;/object&gt;
+	&lt;object value=&quot;Language String 0&quot; type=&quot;text&quot;&gt;
+		&lt;position x=&quot;8&quot; y=&quot;208&quot; w=&quot;51&quot; h=&quot;7&quot; z=&quot;4000&quot; l=&quot;4&quot; r=&quot;0&quot; f=&quot;0&quot;/&gt;
+		&lt;color red=&quot;255&quot; blue=&quot;255&quot; green=&quot;255&quot; alpha=&quot;255&quot; /&gt;
+		&lt;setting key=&quot;number&quot; value=&quot;0&quot; /&gt;
+	&lt;/object&gt;
+	&lt;object value=&quot;planetcute.png:1&quot; type=&quot;sprite&quot;&gt;
+		&lt;position x=&quot;248&quot; y=&quot;32&quot; w=&quot;48&quot; h=&quot;80&quot; z=&quot;2000&quot; l=&quot;2&quot; r=&quot;0&quot; f=&quot;0&quot;/&gt;
+		&lt;color red=&quot;255&quot; blue=&quot;255&quot; green=&quot;255&quot; alpha=&quot;255&quot; /&gt;
+		&lt;entity value=&quot;random-colour&quot; language=&quot;mps&quot; global=&quot;false&quot;/&gt;
+	&lt;/object&gt;
+	&lt;object value=&quot;&quot; type=&quot;rect&quot;&gt;
+		&lt;position x=&quot;96&quot; y=&quot;40&quot; w=&quot;46&quot; h=&quot;47&quot; z=&quot;1000&quot; l=&quot;1&quot; r=&quot;0&quot; f=&quot;0&quot;/&gt;
+		&lt;color red=&quot;255&quot; blue=&quot;255&quot; green=&quot;255&quot; alpha=&quot;255&quot; /&gt;
+		&lt;entity value=&quot;random-colour&quot; language=&quot;mps&quot; global=&quot;false&quot;/&gt;
+	&lt;/object&gt;
+	&lt;object value=&quot;&quot; type=&quot;line&quot;&gt;
+		&lt;position x=&quot;24&quot; y=&quot;40&quot; w=&quot;54&quot; h=&quot;87&quot; z=&quot;0&quot; l=&quot;0&quot; r=&quot;0&quot; f=&quot;0&quot;/&gt;
+		&lt;color red=&quot;255&quot; blue=&quot;255&quot; green=&quot;255&quot; alpha=&quot;255&quot; /&gt;
+		&lt;entity value=&quot;random-colour&quot; language=&quot;mps&quot; global=&quot;false&quot;/&gt;
+	&lt;/object&gt;
+	&lt;object value=&quot;&quot; type=&quot;circle&quot;&gt;
+		&lt;position x=&quot;352&quot; y=&quot;32&quot; w=&quot;33&quot; h=&quot;47&quot; z=&quot;0&quot; l=&quot;0&quot; r=&quot;0&quot; f=&quot;0&quot;/&gt;
+		&lt;color red=&quot;255&quot; blue=&quot;255&quot; green=&quot;255&quot; alpha=&quot;255&quot; /&gt;
+		&lt;entity value=&quot;random-colour&quot; language=&quot;mps&quot; global=&quot;false&quot;/&gt;
+	&lt;/object&gt;
+	&lt;object value=&quot;player1.png:front&quot; type=&quot;sprite&quot; id=&quot;movingpbject&quot;&gt;
+		&lt;position x=&quot;404&quot; y=&quot;134&quot; w=&quot;32&quot; h=&quot;40&quot; z=&quot;1000&quot; l=&quot;1&quot; r=&quot;0&quot; f=&quot;0&quot;/&gt;
+		&lt;color red=&quot;255&quot; blue=&quot;255&quot; green=&quot;255&quot; alpha=&quot;255&quot; /&gt;
+		&lt;entity value=&quot;follow_path&quot; language=&quot;mps&quot; global=&quot;false&quot;/&gt;
+		&lt;path&gt;
+			&lt;point x=&quot;404&quot; y=&quot;134&quot; ms=&quot;10&quot;/&gt;
+			&lt;point x=&quot;600&quot; y=&quot;24&quot; ms=&quot;10&quot;/&gt;
+			&lt;point x=&quot;608&quot; y=&quot;448&quot; ms=&quot;10&quot;/&gt;
+			&lt;point x=&quot;72&quot; y=&quot;448&quot; ms=&quot;10&quot;/&gt;
+			&lt;point x=&quot;73&quot; y=&quot;105&quot; ms=&quot;10&quot;/&gt;
+		&lt;/path&gt;
+	&lt;/object&gt;
+	&lt;object value=&quot;&quot; type=&quot;polygon&quot;&gt;
+		&lt;position x=&quot;200&quot; y=&quot;200&quot; w=&quot;75&quot; h=&quot;72&quot; z=&quot;0&quot; l=&quot;0&quot; r=&quot;0&quot; f=&quot;0&quot;/&gt;
+		&lt;color red=&quot;255&quot; blue=&quot;0&quot; green=&quot;255&quot; alpha=&quot;255&quot; /&gt;
+		&lt;option points=&quot;5&quot;/&gt;
+		&lt;point x=&quot;50&quot; y=&quot;25&quot;/&gt;
+		&lt;point x=&quot;75&quot; y=&quot;40&quot;/&gt;
+		&lt;point x=&quot;60&quot; y=&quot;60&quot;/&gt;
+		&lt;point x=&quot;40&quot; y=&quot;60&quot;/&gt;
+		&lt;point x=&quot;25&quot; y=&quot;40&quot;/&gt;
+	&lt;/object&gt;
+
+&lt;/map&gt;
+	</pre>
+
+
+	<h3>Masks</h3>
+	<p>Custom mask will be stored in binary portable graymap file format, 0 or black will represents transparency</p>
+
+	<h3>Sprites, Animations &amp; Sheets</h3>
+
+	<p>Mokoi uses sprite sheets, which are images that contain many sprites, and a XML to hold the sprite information. They also hold simple animation info.</p>
+	<p>Supported Format: PNG</p>
+
+	<h5>Example sprite sheet</h5>
+	<pre>
+	&lt;sheet xmlns=&quot;http://mokoi.info/format/sheet&quot;&gt;
+		&lt;sprite name=&quot;process_0&quot; hidden=&quot;hidden&quot; mask=&quot;&quot; entity=&quot;&quot;&gt;
+			&lt;position x=&quot;74&quot; y=&quot;38&quot; w=&quot;16&quot; h=&quot;16&quot; /&gt;
+		&lt;/sprite&gt;
+		&lt;sprite name=&quot;process_1&quot; mask=&quot;&quot; entity=&quot;&quot;&gt;
+			&lt;position x=&quot;74&quot; y=&quot;38&quot; w=&quot;16&quot; h=&quot;16&quot; /&gt;
+			&lt;child name=&quot;process_0&quot; position=&quot;top-left&quot; scroll=&quot;0&quot;/&gt;
+			&lt;collision id=&quot;0&quot; x=&quot;0&quot; y=&quot;0&quot; w=&quot;16&quot; h=&quot;16&quot;/&gt;
+		&lt;/sprite&gt;
+		&lt;animation name=&quot;process&quot; hidden=&quot;hidden&quot; mask=&quot;&quot; entity=&quot;&quot;&gt;
+			&lt;frame sprite=&quot;process_0&quot; x=&quot;0&quot; y=&quot;0&quot; ms=&quot;100&quot;/&gt;
+			&lt;frame sprite=&quot;process_1&quot; x=&quot;0&quot; y=&quot;0&quot; ms=&quot;100&quot;/&gt;
+			&lt;frame sprite=&quot;process_2&quot; x=&quot;0&quot; y=&quot;0&quot; ms=&quot;100&quot;/&gt;
+		&lt;/animation&gt;
+	&lt;/sheet&gt;
+	</pre>
+
+
+
+	<h3>Music &amp; Sound Effects</h3>
+	<p>
+		Supported Format (both): Ogg Vorbis<br/>
+		Supported Format (music): it, mod<br/>
+		Supported Format (effects): wav
+	</p>
+
+	<script src="../highlight.pack.js"></script>
+</div>

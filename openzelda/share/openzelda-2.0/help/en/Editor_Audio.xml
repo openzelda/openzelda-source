@@ -1,0 +1,11 @@
+<?xml-stylesheet href="../common.css"?><div xmlns="http://www.w3.org/1999/xhtml">
+	<div class="navbar"><a href="Editor.xml">Editor</a> &gt; </div>
+	<h2>Audio Page</h2>
+
+	<p>Audio file can be played by double clicking on the list. If it doesn't play, it's unlikely to be supported in the game itself</p>
+
+	<h3>Adding Audio</h3>
+	<p>Just remember to check the 'Treat as Music' box if you want to use the file as a music file.</p>
+
+
+</div>

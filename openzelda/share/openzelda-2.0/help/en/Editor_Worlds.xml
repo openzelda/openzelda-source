@@ -1,0 +1,15 @@
+<?xml-stylesheet href="../common.css"?><div xmlns="http://www.w3.org/1999/xhtml">
+	<div class="navbar"><a href="Editor.xml">Editor</a> &gt;</div>
+	<h2>World Editor</h2>
+	<p><img src="../images/editor-world.png" alt=""/></p>
+	
+	<p>Worlds a group of maps, which allow automatic movement between maps.</p>
+	
+	<h4>Controls</h4>
+	<ul>
+		<li>Double clicking on map will open it.</li>
+		<li>Clicking on empty grid, brings up the add map dialog.</li>
+		<li>Right clicking will remove map from the grid.</li>
+	</ul>
+
+</div>

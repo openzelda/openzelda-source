@@ -1,0 +1,48 @@
+<?xml-stylesheet href="../common.css"?><div xmlns="http://www.w3.org/1999/xhtml">
+	<p>Congratulation, you're on the way to creating your own game.</p>
+
+	<h2>Getting Around The Editor</h2>
+	<p><img src="../images/toolbar.png" alt=""/></p>
+
+	<p>All the major components in the Editor can be access by this toolbar. The Project menu gives you links to Play (Ctrl-p), Save and Compile the Game, you can also Import and Export project content. </p>
+
+
+	<h2>Game Creation Tutorials</h2>
+	<ol>
+		<li><a href="Tutorials_1HelloWorld.xml">Hello World</a></li>
+		<li><a href="Tutorials_2UsingGraphics.xml">Using Graphics</a></li>
+		<li><a href="Tutorials_3BasicEntity.xml">Basic Entity</a></li>
+		<li><a href="Tutorials_4MovingEntity.xml">Moving Entity</a></li>
+		<li><a href="Tutorials_5TalkingToOtherEntity.xml">Talking To Other Entity</a></li>
+		<li><a href="Tutorials.xml">All Tutorials</a></li>
+	</ol>
+
+	<h2>Game Info &amp; Settings</h2>
+	<p>These this were you can change the features of the engine for suit your game.</p>
+	<p><a href="Editor_Project.xml">Read more on this component</a></p>
+
+	<h2>Language Editor</h2>
+	<p>Language Editor manages the Game's dialog text and code strings and the language translations.</p>
+	<p>Initial, you will have the 'lang\00.txt' and 'dialog\oo.txt' loaded and these will act as the base for other languages as well.</p>
+	<p>If you wish to support more that language in your game, use the settings 'language.available' and set it to a list of the languages separated by a |. example: en|de|fr</p>
+	<p><a href="Editor_Language.xml">Read more on this component</a></p>
+
+	<h2>Sprite Sheets Editor</h2>
+	<p>Spritesheets are collection of sprites on a image file, which allows for easy management and editing via 3rd party project.</p>
+	<p>The Editor allows for creation and modifying of sprites and animations.</p>
+	<p><a href="Editor_Spritesheet.xml">Read more on this component</a></p>
+
+	<h2>Map and Worlds Editor</h2>
+	<p>Maps contains objects that are displayed on the screen.</p>
+	<p>Worlds a group of maps, which allow automatic movement between maps.</p>
+	<p><a href="Editor_Maps.xml">More on Map Editor component</a> <a href="Editor_Worlds.xml">More on World Editing component</a></p>
+
+	<h2>Audio</h2>
+	<p>Manage you game's Sound Effects and Music.</p>
+	<p><a href="Editor_Audio.xml">Read more on this component</a></p>
+
+	<h2>Entity Scripts</h2>
+	<p>Entity Scripts controls how objects are handle in the game.</p>
+	<p><a href="Editor_Entities.xml">Read more on this component</a></p>
+
+</div>

@@ -1,0 +1,18 @@
+<?xml-stylesheet href="../common.css"?><div xmlns="http://www.w3.org/1999/xhtml">
+	<div class="navbar"><a href="Editor.xml">Editor</a> &gt;</div>
+	<h2>Entity Scripts</h2>
+
+	<p>Entity Scripts controls how the objects are handle within the game. These scripts are written in Pawn Language which you can <a href="Scripting_Pawn.xml">read more about along with interface here</a>.</p>
+
+	<h3>Entity Editor</h3>
+	<p><img src="../images/entity-editor.png" alt=""/></p>
+	<ul>
+		<li>Hover over the gutter (line numbers) when the line is red to see the error message.</li>
+		<li>Highlight a function name and you can right click and select search help and the function will get display in the Help Section.</li>
+		<li>Ctrl + space brings up function auto-complete.</li>
+	</ul>
+
+	<h4>Insert Function</h4>
+	<p>When in the Entity Editor, the Insert Function dialog window can be brought up by right clicking.</p>
+	<p><img src="../images/entity-insert-function.png" alt=""/></p>
+</div>

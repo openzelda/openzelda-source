@@ -1,0 +1,9 @@
+<?xml-stylesheet href="../common.css"?>
+<div xmlns="http://www.w3.org/1999/xhtml">
+	<h2>Design Notes</h2>
+	<ul>
+		<li><a href="DesignNotes_Formats.xml">Formats</a></li>
+		<li><a href="DesignNotes_GameProcess.xml">Game Process</a></li>
+		<li><a href="DesignNotes_GUIStyle.xml">GUI Styling</a></li>
+	</ul>
+</div>

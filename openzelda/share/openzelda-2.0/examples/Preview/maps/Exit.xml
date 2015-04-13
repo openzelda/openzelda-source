@@ -1,0 +1,71 @@
+<map xmlns="http://mokoi.info/projects/mokoi">
+<settings>
+	<dimensions width="1" height="1" />
+	<color red="65" blue="66" green="90" mode="0" />
+	<option name="independent" value="false" type="" />
+	<option name="wrap" value="0" type="" />
+	<option name="music" value="" type="music" />
+	<option name="centerview" value="false" type="" />
+	<option name="name" value="" type="" />
+</settings>
+<object value="titlemenu.png:bg" type="sprite">
+	<position x="0" y="0" w="512" h="512" z="0" l="0" r="0" f="0"/>
+	<color red="255" blue="255" green="255" alpha="255" />
+</object>
+<object value="titlemenu.png:b1" type="sprite">
+	<position x="48" y="80" w="16" h="16" z="0" l="0" r="0" f="0"/>
+	<color red="255" blue="255" green="255" alpha="255" />
+</object>
+<object value="titlemenu.png:b3" type="sprite">
+	<position x="448" y="80" w="16" h="16" z="0" l="0" r="0" f="0"/>
+	<color red="255" blue="255" green="255" alpha="255" />
+</object>
+<object value="titlemenu.png:b2" type="sprite">
+	<position x="64" y="80" w="384" h="16" z="0" l="0" r="0" f="0"/>
+	<color red="255" blue="255" green="255" alpha="255" />
+</object>
+<object value="titlemenu.png:b8" type="sprite">
+	<position x="48" y="96" w="16" h="256" z="0" l="0" r="0" f="0"/>
+	<color red="255" blue="255" green="255" alpha="255" />
+</object>
+<object value="titlemenu.png:b4" type="sprite">
+	<position x="448" y="96" w="16" h="256" z="0" l="0" r="0" f="0"/>
+	<color red="255" blue="255" green="255" alpha="255" />
+</object>
+<object value="titlemenu.png:b6" type="sprite">
+	<position x="64" y="352" w="384" h="16" z="1000" l="1" r="0" f="0"/>
+	<color red="255" blue="255" green="255" alpha="255" />
+</object>
+<object value="titlemenu.png:b5" type="sprite">
+	<position x="448" y="352" w="16" h="16" z="1000" l="1" r="0" f="0"/>
+	<color red="255" blue="255" green="255" alpha="255" />
+</object>
+<object value="titlemenu.png:b7" type="sprite">
+	<position x="48" y="352" w="16" h="16" z="1000" l="1" r="0" f="0"/>
+	<color red="255" blue="255" green="255" alpha="255" />
+</object>
+<object value="Rectangle" type="rect">
+	<position x="64" y="96" w="384" h="261" z="0" l="0" r="0" f="0"/>
+	<color red="0" blue="0" green="0" alpha="255" />
+</object>
+<object value="Thank you for playing Open Zelda" type="text">
+	<position x="64" y="112" w="114" h="8" z="3000" l="3" r="0" f="0"/>
+	<color red="255" blue="255" green="255" alpha="255" />
+	<setting key="number" value="-1" />
+</object>
+<object value="Please note that alot of the content is sill in " type="text">
+	<position x="64" y="168" w="144" h="7" z="0" l="0" r="0" f="0"/>
+	<color red="255" blue="255" green="255" alpha="255" />
+	<setting key="number" value="-1" type=""/>
+</object>
+<object value="development, so your feedback is want." type="text">
+	<position x="64" y="192" w="130" h="8" z="0" l="0" r="0" f="0"/>
+	<color red="255" blue="255" green="255" alpha="255" />
+	<setting key="number" value="-1" type=""/>
+</object>
+<object value="- Luke <luke@openzelda.net>" type="text">
+	<position x="64" y="248" w="101" h="8" z="0" l="0" r="0" f="0"/>
+	<color red="255" blue="255" green="255" alpha="255" />
+	<setting key="number" value="-1" type=""/>
+</object>
+</map>

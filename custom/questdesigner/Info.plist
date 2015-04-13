@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleSignature</key>
+	<string>OZQD</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleVersion</key>
+	<string>1.8</string>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeExtensions</key>
+			<array>
+				<string>zelda</string>
+			</array>
+			<key>CFBundleTypeName</key>
+			<string>Mokoi Game Source</string>
+			<key>LSHandlerRank</key>
+			<string>Default</string>
+		</dict>
+	</array>
+	<key>CFBundleName</key>
+	<string>Quest Designer</string>
+	<key>CFBundleExecutable</key>
+	<string>quest_designer</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>10.5.0</string>
+	<key>CFBundleDisplayName</key>
+	<string>Quest Designer</string>
+	<key>CFBundleGetInfoString</key>
+	<string>Quest Designer</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>Open Zelda</string>
+	<key>CFBundleIconFile</key>
+	<string>openzelda-quest-designer.icns</string>
+	<key>CFBundleIdentifier</key>
+	<string>net.openzelda.editor</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>NSAppleScriptEnabled</key>
+	<false/>
+</dict>
+</plist>

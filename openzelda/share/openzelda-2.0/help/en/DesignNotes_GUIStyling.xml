@@ -1,0 +1,62 @@
+<?xml-stylesheet href="../common.css"?>
+<div xmlns="http://www.w3.org/1999/xhtml">
+	<div class="navbar"><a href="DesignNotes.xml">Design Notes</a> &gt; </div>
+	<h2>GUI Styling</h2>
+	<p>CSS-like styling for the GUI component. </p>
+	<h3>Example gui.style setting</h3>
+	<pre class="css">
+	dialog { border-image: dialog-border.png; border-width:12; color:#000000FF; box-model:box; }
+	imagebutton { color: #FFFFFFFF; border-color: #1A0D27DD; background-color: #27143ADD; border-width: 1; border-color: #000000FF; border-style:solid; }
+	imagebutton:hover { color: #FFFFFFFF; border-color: #000000FF; background-color: #575570DD; border-width: 1; border-color: #000000FF; border-style:solid; }
+	guibackground { background-color: #007DBDFF; background-color2: #ACD2E7FF; background-style: vertical-gradient; }
+	text, text:hover { background-color: #2F1648FF; background-color2: #361E50FF; background-style: vertical-gradient;}
+	</pre>
+
+	<h3>Elements</h3>
+	<ul>
+		<li>emptywindow</li>
+		<li>dialogok</li>
+		<li>dialogyesno</li>
+		<li>dialogyesnocancel</li>
+		<li>dialogtext</li>
+		<li>throbber</li>
+		<li>checkbox</li>
+		<li>text</li>
+		<li>inputtext</li>
+		<li>button</li>
+		<li>imagebutton</li>
+		<li>image</li>
+		<li>box</li>
+	</ul>
+
+	<h4>Element States</h4>
+	<ul>
+		<li>enabled</li>
+		<li>pressed</li>
+		<li>hover</li>
+		<li>clicked</li>
+		<li>active</li>
+		<li>disabled</li>
+		<li>activehover</li>
+	</ul>
+
+
+	<h3>Properties</h3>
+	<p>Note: Doesn't support multiple values for a property.</p>
+
+	<ul>
+		<li>background-color</li>
+		<li>background-color-secondary</li>
+		<li>background-style</li>
+
+		<li>border-color</li>
+		<li>border-image</li>
+		<li>border-style</li>
+		<li>border-width</li>
+
+		<li>color</li>
+		<li>color-secondary</li>
+		<li>style</li>
+	</ul>
+
+</div>

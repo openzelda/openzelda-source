@@ -1,0 +1,39 @@
+#include <windows.h> // include for version info constants
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+A ICON MOVEABLE PURE LOADONCALL DISCARDABLE "OpenZelda.ico"
+120               ICON    DISCARDABLE     "qst.ico"
+
+1 VERSIONINFO
+FILEVERSION 6,10,2,1412
+PRODUCTVERSION 6,10,2,1412
+FILETYPE VFT_APP
+{
+  BLOCK "StringFileInfo"
+	 {
+		 BLOCK "040904E4"
+		 {
+			 VALUE "CompanyName", ""
+			 VALUE "FileVersion", "6.10.2.1412"
+			 VALUE "FileDescription", "Open Zelda Classic Edition"
+			 VALUE "InternalName", "classicopenzelda.exe"
+			 VALUE "LegalCopyright", ""
+			 VALUE "LegalTrademarks", "Nintendo"
+			 VALUE "OriginalFilename", "classicopenzelda.exe"
+			 VALUE "ProductName", "Open Zelda Classic Edition"
+			 VALUE "ProductVersion", "6.10.2.1412"
+		 }
+	 }
+  BLOCK "VarFileInfo"
+	 {
+		 VALUE "Translation", 0x0409, 1252
+	 }
+}
+

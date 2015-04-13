@@ -1,0 +1,365 @@
+<?xml-stylesheet href="../common.css"?><div xmlns="http://www.w3.org/1999/xhtml">
+	<div class="navbar"><a href="Tutorials.xml">Tutorials</a> &gt; </div>
+	<h2>Basic Invaders Game Code</h2>
+	<h3>enemyarea.mps</h3>
+	<pre>/* Usage 
+	Draw a rectangle on the map and attach this entity
+*/
+
+#define rect [.x, .y, .w, .h]
+
+new ship_size = 20;
+new ships_per_line = 16
+new lines_of_ships = 5;
+new total_ships = 10;
+new screen_padding = 8;
+
+new Fixed:x, Fixed:y, Fixed:z;
+new dir = 0;
+new dir_multiple = -1;
+new Fixed:speed = 32.0;
+new map_width, map_height;
+
+new entity:ships[512];
+new area[rect];
+new last_line_y;
+new object:obj;
+
+
+public Init(...)
+{
+	obj = EntityGetObject();
+	EntityGetPosition(x,y,z);
+
+	ObjectInfo(obj, area.w, area.h, area.x, area.y );
+	ObjectEffect(obj, 0xFFFFFF00);
+
+	MapCurrentDimension(map_width, map_height);
+
+	CreateEnemies( );
+}
+
+CreateEnemies( )
+{
+	new i = 0;
+	new subx,suby;
+	
+	ships_per_line = area.w / ship_size;
+	lines_of_ships = area.h / ship_size;
+	total_ships = ships_per_line * lines_of_ships;
+
+	if ( total_ships == 0 )
+	{
+	}
+	else
+	{
+		total_ships = NumberClamp( total_ships, ships_per_line, 512);
+
+		while ( i &lt; total_ships )
+		{
+			subx = area.x + ( (i % ships_per_line) * ship_size);
+			suby = area.y + ( (i / ships_per_line) * ship_size);
+			ships[i] = EntityCreate(&quot;invader&quot;, &quot;&quot;, subx, suby, z + 1, MapCurrentIdent() );
+			i++;
+		}
+	}
+}
+
+main()
+{
+	if ( total_ships == 0 )
+	{
+		GraphicsDraw(&quot;No Invaders&quot;, TEXT, 5, 5, 6,0 ,0)
+	}
+	else
+	{
+		switch ( dir )
+		{
+			case 0: // right
+			{
+				if ( area.x + area.w &gt; map_width - screen_padding )
+				{
+					dir_multiple *= -1;
+					dir += dir_multiple;
+					last_line_y = area.y;
+					ChangeDirection();
+				}
+				else
+					x += GameFrameSeconds() * speed;
+			} 
+			case 1: // down
+			{
+				if ( area.y &gt; last_line_y + ship_size )
+				{
+					dir += dir_multiple;
+					ChangeDirection();
+				}
+				else
+					y += GameFrameSeconds() * speed;
+			} 
+			case 2: // left
+			{
+				if ( area.x &lt; screen_padding )
+				{
+					dir_multiple *= -1;
+					dir += dir_multiple;
+					last_line_y = area.y;
+					ChangeDirection()
+				}
+				else
+					x -= GameFrameSeconds() * speed;
+			}
+		}
+
+		area.x = fround(x);
+		area.y = fround(y);
+		
+		EntitySetPosition(x,y,z);
+		ObjectPosition(obj, area.x, area.y,z, area.w, area.h);
+	}
+}
+
+ChangeDirection()
+{
+	new i = 0;
+	while ( i &lt; total_ships )
+	{
+		EntityPublicFunction(ships[i], &quot;ChangeDirection&quot;);
+		i++;
+	}
+
+}
+
+public Close()
+{
+	new i = 0;
+	while ( i &lt; total_ships )
+	{
+		EntityDelete(ships[i]);
+		i++;
+	}
+}</pre>
+
+	<h3>Invader Entity (invader.map</h3>
+	<pre>
+new Fixed:x, Fixed:y, Fixed:z;
+new dead = 0;
+new object:obj;
+new dir = 0;
+new dir_multiple =1;
+new Fixed:speed = 32.0;
+forward public Init(...);
+forward public Close();
+forward public hit();
+
+public Init(...)
+{
+	EntityGetPosition(x, y,z);
+	obj = ObjectCreate(&quot;enemy.png:1&quot;, SPRITE, fround(x), fround(y), z, 0, 0);
+}
+
+public Close()
+{
+	CollisionSet( SELF, 0, 0, 0, 0,0);
+	ObjectDelete(obj);
+}
+
+main()
+{
+	if (!dead)
+	{
+		move();
+	}
+}
+
+move()
+{
+	switch ( dir )
+	{
+		case 0: // right
+		{
+			x += GameFrameSeconds() * speed
+		} 
+		case 1: // down
+		{
+			y += GameFrameSeconds() * speed
+		} 
+		case 2: // left
+		{
+			x -= GameFrameSeconds() * speed
+		}
+	}
+
+	EntitySetPosition( x,y,z);
+	ObjectPosition(obj, fround(x), fround(y), z, 0, 0);
+	CollisionSet(SELF, 0, 1, fround(x), fround(y), 12, 12);
+}
+
+public ChangeDirection()
+{
+	dir += dir_multiple;
+
+	if ( dir != 1 )
+		dir_multiple *= -1;
+}
+
+public hit()
+{
+	//EntityPublicFunction(0, &quot;addScore&quot;);
+	dead = 1;
+	AudioPlaySound(&quot;invader_death.wav&quot;);
+	EntityDelete();
+}</pre>
+	<h3>Player Entity</h3>
+	<pre>forward public hit();
+forward public addScore();
+
+new object:obj;
+new Fixed:weapon_delay = 0.00;
+new lives = 3;
+new score = 0;
+new Fixed:x = 248.00;
+new Fixed:y = 352.00;
+new Fixed:z = 352.00;
+new width = 16;
+
+public Init(...)
+{
+  obj = EntityGetObject();
+  EntityGetPosition( x,y, z )
+}
+
+public Close()
+{
+
+}
+
+main()
+{
+    Hud();
+
+    if( lives &gt; 0)
+    {
+        new axis = InputAxis(0);
+        new Fixed:movement = GameFrameSeconds() * (axis/15);
+
+        if ( axis != 0 )
+        {
+            x += movement;
+            ObjectPosition(obj, fround(x), fround(y), 4.0, 0, 0);
+        }
+        if( weapon_delay &lt;= 0.00)
+        {
+            if ( InputButton(0, 0) == 1)
+            {
+                weapon_delay = 0.6;
+                Shoot();
+            }
+        }
+        else
+        {
+            weapon_delay -= GameFrameSeconds();
+        }
+        CheckBorders();
+        CollisionSet(SELF, 0, fround(x), fround(y), 16, 16);
+    }
+    else
+    {
+        ObjectDelete(obj);
+    }
+}
+
+Hud()
+{
+  
+}
+
+Shoot()
+{
+    EntityCreate(&quot;bullet&quot;, &quot;&quot;, fround(x) + 6, fround(y) - 4, 5, MapCurrentIdent());
+}
+
+CheckBorders()
+{
+    if (x &gt;= (512 - width))
+    {
+        x = (512 - width);
+        return;
+    }
+    else if (x &lt;= 0)
+    {
+        x = 0;
+        return;
+    }
+}
+
+public hit()
+{
+    if( lives &gt; 0)
+    {
+    //lives--;
+    }
+}
+
+public addScore()
+{
+    score += 200;
+}</pre>
+	<h3>Bullet Entity (bullet.mps)</h3>
+	<pre>new type = 0;
+new Fixed:x, Fixed:y, Fixed:z;
+new object:obj;
+new Fixed:speed = 50.0;
+public Init(...)
+{
+	EntityGetPosition(x, y, z);
+	obj = ObjectCreate(&quot;&quot;, RECTANGLE, fround(x), fround(y), 4, 2, 4, 0x22EEFFFF  );
+
+}
+
+public Close()
+{
+	CollisionSet(SELF, 0, 0, 0, 0, 0);
+	ObjectDelete(obj);
+}
+
+main()
+{
+	new Fixed:movement = GameFrameSeconds()*speed;
+
+	y -= movement;
+	CheckForEnemies();
+
+	if( y &lt; 6.00)
+	{
+		EntityDelete();
+	}
+	else
+	{
+
+		CollisionSet(SELF, 0, 0, fround(x), fround(y), 2, 4);
+		ObjectPosition(obj, fround(x), fround(y), z, 2, 4);
+	}
+}
+
+CheckForEnemies()
+{
+	if ( CollisionCalculate() )
+	{
+		new entity:current;
+		new angle;
+		new dist;
+		new rect;
+		new type;
+		while ( CollisionGetCurrent(SELF, current, angle, dist, rect, type) )
+		{
+			EntityPublicFunction(current, &quot;hit&quot;);
+			EntityDelete();
+			return;
+		}
+	}
+
+}</pre>
+
+
+</div>

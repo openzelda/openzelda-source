@@ -1,0 +1,11 @@
+<entity>
+	<option name="section" value="Dungeon_One" type="section" />
+	<option name="section_x" value="0" type="" />
+	<option name="section_y" value="0" type="" />
+	<option name="independent" value="false" type="" />
+	<option name="name" value="" type="" />
+	<option name="wrap" value="0" type="" />
+	<option name="centerview" value="false" type="" />
+	<option name="music" value="Title.it" type="music" />
+	<option name="map" value="0: d1_outside" type="map" />
+</entity>

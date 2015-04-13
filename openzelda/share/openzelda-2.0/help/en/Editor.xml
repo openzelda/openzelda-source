@@ -1,0 +1,19 @@
+<?xml-stylesheet href="../common.css"?><div xmlns="http://www.w3.org/1999/xhtml">
+
+	<h2>Editor</h2>
+	<p><img src="../images/toolbar.png" alt=""/></p>
+
+	<ul>
+		<li><a href="Editor_Project.xml">Project Settings</a></li>
+		<li><a href="Editor_Language.xml">Language</a></li>
+		<li><a href="Editor_Spritesheet.xml">Sprite Sheet</a></li>
+		<li><a href="Editor_MapEdit.xml">Maps</a></li>
+		<li><a href="Editor_MapSection.xml">Worlds</a></li>
+		<li><a href="Editor_Audio.xml">Audio Files</a></li>
+		<li><a href="Editor_Entities.xml">Entity Scripts</a></li>
+	</ul>
+
+	<h3>Other Features</h3>
+
+
+</div>

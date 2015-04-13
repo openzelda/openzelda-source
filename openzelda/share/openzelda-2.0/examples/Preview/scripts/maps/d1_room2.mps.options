@@ -1,0 +1,11 @@
+<entity>
+	<option name="on-event" value="OpenDoor" type="" />
+	<option name="independent" value="false" type="" />
+	<option name="off-event" value="" type="" />
+	<option name="name" value="" type="" />
+	<option name="wrap" value="0" type="" />
+	<option name="centerview" value="false" type="" />
+	<option name="on-entity" value="dl_r2_d2" type="" />
+	<option name="music" value="" type="music" />
+	<option name="off-entity" value="" type="" />
+</entity>

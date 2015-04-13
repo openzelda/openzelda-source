@@ -1,0 +1,48 @@
+<?xml-stylesheet href="../common.css"?>
+<div xmlns="http://www.w3.org/1999/xhtml">
+	<div class="navbar"><a href="DesignNotes.xml">Design Notes</a> &gt; </div>
+	<h2>Controller</h2>
+
+
+	<h3>Defining Custom Controls</h3>
+	<p>Control configuration are store in | separated list. They are stored in this order, Axis 1, Axis 2, Pointer, Button 0, ... , Button 15. </p>
+
+	<h4>Axis</h4>
+	<p>Each axis is three values between -255 and 255 representing x,y,z axis.</p>
+
+	<strong>Predefine Options</strong>
+	<ul>
+		<li>arrows</li>
+		<li>numpad</li>
+		<li>keyboard-wasd</li>
+		<li>mouse (not supported yet)</li>
+		<li>touchscreen (not supported yet)</li>
+		<li>controlaxis</li>
+	</ul>
+
+	<h4>Pointer</h4>
+	<p>x/y values of the mouse, touchscreen or controller stick.</p>
+	<strong>Predefine Options</strong>
+	<ul>
+		<li>mouse</li>
+		<li>touchscreen (not supported yet)</li>
+		<li>controlaxis</li>
+	</ul>
+
+	<h4>Button</h4>
+	<p>Button is a off/on control. Unlike Axis and pointer, you use a prefix followed by number representing the input.</p>
+
+	<strong>Predefine Prefix</strong>
+	<ul>
+		<li>k for keyboard key.</li>
+		<li>m for mouse button.</li>
+		<li>b for controller button.</li>
+		<li>h for controller hat.</li>
+	</ul>
+
+	<h4>Example</h4>
+	<pre>arrows|mouse|mouse|k04|k022|k07|k020|k026|k08|k040|k079|k080|k081|k082|m01|m02|m03|m04|k041|k040|k041|m01|k061</pre>
+	<p>Note the A0 after controlaxis, that stands for controller A, axis 0.</p>
+
+
+</div>

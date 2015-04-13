@@ -1,0 +1,33 @@
+<?xml-stylesheet href="../common.css"?><div xmlns="http://www.w3.org/1999/xhtml">
+	<div class="navbar"><a href="Tutorials.xml">Tutorials</a> &gt;</div>
+	<h2>Tutorial: Moving Entity</h2>
+
+	<p>Entities can be attach to added to any Display Object. This allow the following example code to be attach to any Object, be Sprite, Text or a Shape, and have it move due to the player's input.</p>
+	<h3>Example Code</h3>
+	<pre>/* Initialise Three Fixed variables to hold position */
+new Fixed:x = 0.00;
+new Fixed:y = 0.00;
+new Fixed:z = 0.00;
+
+/* Display Object variable */
+new object:obj; // the obj varible is tagged as object.
+
+/* We want to get the position on entity start up, so we use the Init function */
+public Init(...)
+{
+  /* We want to store, position for current entity to x, y variables. */
+  EntityGetPosition(x, y, z);
+  obj = EntityGetObject() // Get the display object the entity is attacted to.
+}
+
+
+main()
+{
+  /* Get Player 1 Axis Values and add them to the entity positions */
+  x += InputAxis(0)* GameFrameSeconds();
+  y += InputAxis(1)* GameFrameSeconds();
+
+  ObjectPosition(obj, fround(x), fround(y), z, 0, 0);
+}</pre>
+
+</div>

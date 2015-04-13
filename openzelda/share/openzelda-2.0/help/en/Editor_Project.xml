@@ -1,0 +1,80 @@
+<?xml-stylesheet href="../common.css"?><div xmlns="http://www.w3.org/1999/xhtml">
+	<div class="navbar"><a href="Editor.xml">Editor</a> &gt;</div>
+	<h2>Project Settings</h2>
+	<p>These this were you can change the features of the engine for suit your game.</p>
+
+	<h3>Project</h3>
+	<dl>
+		<dt>Project ID:</dt>
+		<dd>Unique ID for the current project. Also can be use to allow access it's saved info from other games.</dd>
+
+		<dt>Title:</dt>
+		<dd>Name of the Game. <em>&quot;project.title&quot;</em></dd>
+
+		<dt>Author:</dt>
+		<dd>Your name. <em>&quot;project.author&quot;</em></dd>
+
+		<dt>Debug:</dt>
+		<dd>enables/disable the debug mode. <em>&quot;debug.able&quot;</em></dd>
+
+		<dt>Audio:</dt>
+		<dd>enables/disable the audio system. <em>&quot;audio.able&quot;</em></dd>
+
+		<dt>Saving:</dt>
+		<dd>enables/disable the saving/loading.</dd>
+
+		<dt>Allow Save Access:</dt>
+		<dd>Enable to allow other games to access the saved information from this games.</dd>
+
+		<dt>Icon: (Under Resources)</dt>
+		<dd>32x32 png image used project icon and window icon</dd>
+
+		<dt>Content:</dt>
+		<dd>Main: </dd>
+		<dd>Graphics: Use a pre-made graphics package. (Not implemented yet)</dd>
+		<dd>Sound Effects: Use a pre-made sound effects package. (Not implemented yet)</dd>
+		<dd>Music: Use a pre-made music package. (Not implemented yet)</dd>
+	</dl>
+
+
+	<h3>Display</h3>
+	<dl>
+		<dt>Custom Display Dimension:</dt>
+		<dd>Allow a display dimension interdependent of the Screen Dimension. Display Dimension is analogous to the window size.</dd>
+
+		<dt>Screen Dimension</dt>
+		<dd>The Area that the game draws to</dd>
+
+		<dt>Fullscreen:</dt>
+		<dd> </dd>
+
+		<dt>Scale Graphics:</dt>
+		<dd>Scales the graphics from Screen Dimension to the Display Dimension.</dd>
+	</dl>
+
+	<h3>Miscellaneous </h3>
+	<dl>
+		<dt>Map Dimension:</dt>
+		<dd>The Dimension used for Maps.</dd>
+		<dt>Default Language:</dt>
+		<dd>The language file that the game will use as default.</dd>
+
+		<dt>Number of Player:</dt>
+		<dd>Number of players that are set up for the game. Maximum of 16.</dd>
+
+	</dl>
+
+	<h3>Advance</h3>
+	<p></p>
+ 
+	<h4>Player Controls</h4>
+	<p>Player controllers can be change by modify the &quot;player.controller1&quot; setting.</p>
+	<p><em>Example</em>
+		<pre>
+player.controller1 = default0
+player.controller2 = gamepad0
+player.controller3 = gamepad1
+player.controller4 = virtual1
+		</pre>
+	</p>
+</div>

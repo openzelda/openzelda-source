@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Quest Designer 2.0 Beta
+GenericName=Quest Designer
+Comment=
+Exec=/opt/openzelda/bin/quest_designer
+Icon=/opt/openzelda/share/icons/hicolor/openzelda-quest-designer.png
+Terminal=false
+Type=Application
+StartupNotify=true
+MimeType=application/x-openzelda-quest-source
+Categories=Game;

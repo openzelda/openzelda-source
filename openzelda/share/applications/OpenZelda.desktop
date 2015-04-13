@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Open Zelda 2.0 Beta
+GenericName=Open Zelda
+Comment=
+Exec=/opt/openzelda/bin/openzelda
+Icon=/opt/openzelda/share/icons/hicolor/openzelda-player.png
+Terminal=false
+Type=Application
+StartupNotify=true
+MimeType=application/x-openzelda-quest;
+Categories=Game;

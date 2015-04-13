@@ -1,0 +1,11 @@
+#	0	64	64
+d1_outside	0	0	1	1
+d1_room1	2	4	1	1
+d1_room2	2	3	1	1
+d1_room3	2	2	1	1
+d1_room5	3	2	1	1
+d1_room4	3	3	1	1
+d1_room6	4	4	1	1
+d1_room7	3	4	1	1
+d1_bossroom	5	4	1	1
+d1_itemroom	5	3	1	1

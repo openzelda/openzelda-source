@@ -1,0 +1,9 @@
+<entity>
+	<option name="independent" value="false" type="" />
+	<option name="centerview" value="false" type="" />
+	<option name="on-event" value="Wake" type="" />
+	<option name="on-entity" value="d1_boss" type="" />
+	<option name="wrap" value="0" type="" />
+	<option name="music" value="Dungeon.ogg" type="music" />
+	<option name="name" value="" type="" />
+</entity>

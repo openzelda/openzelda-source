@@ -1,0 +1,30 @@
+#include <windows.h> // include for version info constants
+
+A ICON MOVEABLE PURE LOADONCALL DISCARDABLE "openzelda-quest-designer.ico"
+
+1 VERSIONINFO
+FILEVERSION 0,9,6,1201
+PRODUCTVERSION 1,9,0,1201
+FILETYPE VFT_APP
+{
+	BLOCK "StringFileInfo"
+	{
+		BLOCK "0C0904E4"
+		{
+			VALUE "CompanyName", "Open Zelda"
+			VALUE "FileVersion", "20141201"
+			VALUE "FileDescription", "Quest Designer - Zelda Game Creation Tool"
+			VALUE "InternalName", "Meg"
+			VALUE "LegalCopyright", "Open Zelda openzelda.net"
+			VALUE "LegalTrademarks", ""
+			VALUE "OriginalFilename", ""
+			VALUE "ProductName", "Open Zelda"
+			VALUE "ProductVersion", "1.9.0"
+		}
+	}
+	BLOCK "VarFileInfo"
+	{
+		VALUE "Translation", 0x0C09, 1252
+	}
+}
+

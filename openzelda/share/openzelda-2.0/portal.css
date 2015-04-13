@@ -1,0 +1,8 @@
+guibackground { background-color: #007DBDFF; background-color2: #ACD2E7FF; background-style: horizontal-gradient; }
+text, text:hover { background-color: #2F1648FF; background-color2: #361E5000; background-style: horizontal-gradient; text-align:center; }
+
+box { border-image: button-border.png; border-width:16px; color:#000000FF; padding: 16px; }
+imagebutton { border-width:2; border-style:solid; background-color: #000000aa; color:#000000FF; min-height:36px; padding: 4px; }
+imagebutton:hover { color:#660000FF;  }
+
+dialog { min-height: 40px; border-image: dialog-border.png; border-width:12; color:#000000FF; }

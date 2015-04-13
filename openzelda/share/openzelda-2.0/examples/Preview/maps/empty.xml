@@ -1,0 +1,17 @@
+<map xmlns="http://mokoi.info/projects/mokoi">
+<settings>
+	<dimensions width="1" height="1" />
+	<color red="64" blue="124" green="98" mode="0" />
+	<option name="independent" value="false" type="" />
+	<option name="wrap" value="0" type="" />
+	<option name="music" value="" type="music" />
+	<option name="centerview" value="false" type="" />
+	<option name="name" value="" type="" />
+</settings>
+<object value="p01.png:player" type="sprite">
+	<position x="277" y="170" w="96" h="144" z="0" l="0" r="0" f="0"/>
+	<color red="255" blue="255" green="255" alpha="255" />
+	<setting key="Weapon" value="weapon_test" />
+	<entity value="link" language="mps" global="false"/>
+</object>
+</map>

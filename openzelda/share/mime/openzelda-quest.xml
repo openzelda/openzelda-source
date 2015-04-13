@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
+	<mime-type type="application/x-openzelda-quest">
+		<comment xml:lang="en">Open Zelda Quest</comment>
+		<magic priority="50">
+			<match type="string" value="\x89Mokoi" offset="0"/>
+		</magic>
+		<glob pattern="*.quest"/>
+	</mime-type>
+	<mime-type type="application/x-openzelda-quest-source">
+		<comment xml:lang="en">Open Zelda Quest Source</comment>
+		<magic priority="50">
+			<match type="string" value="[Mokoi]" offset="0"/>
+		</magic>
+		<glob pattern="edit.zelda"/>
+	</mime-type>
+</mime-info>

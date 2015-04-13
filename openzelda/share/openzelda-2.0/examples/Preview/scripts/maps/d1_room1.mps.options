@@ -1,0 +1,4 @@
+<entity>
+	<option name="music" value="Dungeon.ogg" type="" />
+	<option name="name" value="Test Dungeon" type="" />
+</entity>

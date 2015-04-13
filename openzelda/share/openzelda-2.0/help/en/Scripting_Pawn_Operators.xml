@@ -1,0 +1,177 @@
+<?xml-stylesheet href="../common.css"?><div xmlns="http://www.w3.org/1999/xhtml">
+<div class="navbar"><a href="Scripting.xml">Scripting</a> &gt;</div>
+	<h2>Pawn Operators</h2>
+	<h3 id="Notationalconventions">Notational conventions</h3>
+	<p>The operation of some operators depends on the speciﬁc kinds of operands. - Therefore, operands are notated thus: - <strong>e</strong> - any expression; - <strong>v</strong> - any expression to which a value can be assigned ("lvalue" expressions); - <strong>a</strong> - an array; - <strong>f</strong> - a function; - <strong>s</strong> - a symbol - which is a variable, a constant or a function.</p>
+
+	<h3>Expressions</h3>
+	<p>An expression consists of one or more operands with an operator. The operand can be a variable, a constant or another expression. An expression followed by a semicolon is a statement.</p>
+
+	<p><em>Listing: examples of expressions</em></p>
+	<pre class="wiki">v++
+f(a1, a2)
+v = (ia1 * ia2) / ia3
+	</pre>
+	<h3>Arithmetic</h3>
+	<h4>+</h4>
+	<p><em>e1 + e2</em> - Results in the addition of e1 and e2.</p>
+
+	<h4>-</h4>
+	<p><em>e1 - e2</em> - Results in the subtraction of e1 and e2.</p>
+
+	<h4>-e</h4>
+	<p><em>-e</em> - Results in the arithmetic negation of a (two's complement).</p>
+
+	<h4>*</h4>
+	<p><em>e1 * e2</em> - Results in the multiplication of e1 and e2.</p>
+
+	<h4>/</h4>
+	<p><em>e1 / e2</em> - Results in the division of e1 by e2. The result is truncated to the nearest integral value that is less than or equal to the quotient. Both negative and positive values are rounded down, i.e. towards −∞.</p>
+
+	<h4>%</h4>
+	<p><em>e1 % e2</em> - Results in the remainder of the division of e1 by e2. The sign of the remainder follows the sign of e2. Integer division and remainder have the Euclidean property: D = q*d + r, where q = D/d and r = D%d. <br /></p>
+
+	<h4>++</h4>
+	<p><em>v++</em> - increments v by 1; the result if the expression is the value of v before it is incremented.</p>
+	<p><em>++v</em> - increments v by 1; the result if the expression is the value of v after it is incremented.</p>
+
+	<h4>--</h4>
+	<p><em>v--</em> - decrements v by 1; the result if the expression is the value of v before it is decremented.</p>
+	<p><em>--v</em> - decrements v by 1; the result if the expression is the value of v after it is decremented.</p>
+
+	<h3>Bit manipulation</h3>
+	<h4>~</h4>
+	<p><em>~e</em> - results in the one's complement of e.</p>
+
+	<h4>&gt;&gt;</h4>
+	<p><em>e1 &gt;&gt; e2</em> - results in the arithmetic shift to the right of e1 by e2 bits. - The shift operation is signed: the leftmost bit of e1 is copied to vacant bits in the result.</p>
+
+	<h4>&gt;&gt;&gt;</h4>
+	<p><em>e1 &gt;&gt;&gt; e2</em> - results in the logical shift to the right of e1 by e2 bits. The shift operation is unsigned: the vacant bits of the result are ﬁlled with zeros.</p>
+
+	<h4>&lt;&lt;</h4>
+	<p><em>e1 &lt;&lt; e2</em> - results in the value of e1 shifted to the left by e2 bits; the rightmost bits are set to zero. There is no distinction between an arithmetic and a logical left shift.</p>
+
+	<h4>&amp;</h4>
+	<p><em>e1 &amp; e2</em> - results in the bitwise logical "and" of e1 and e2.</p>
+
+	<h4>|</h4>
+	<p><em>e1 | e2</em> - results in the bitwise logical "or" of e1 and e2.</p>
+
+	<h4>^</h4>
+	<p><em>e1 ^ e2</em> - results in the bitwise "exclusive or" of e1 and e2.</p>
+
+	<h3>Assignment</h3>
+	<p>The result of an assignment expression is the value of the left operand after the assignment. The left operand may not be tagged.</p>
+
+	<h4>=</h4>
+	<p><em>v = e</em> - assigns the value of e to variable v.</p>
+	<p><em>v = a</em> - assigns array a to variable v; v must be an array with the same size and dimensions as a; a may be a string or a literal array.</p>
+
+	<p>Note: the following operators combine an assignment with an arithmetic or a bitwise operation; the result of the expression is the value of the left operand after the arithmetic or bitwise operation.</p>
+
+	<h4>+=</h4>
+	<p><i>v += e</i> - increments v with e.</p>
+
+	<h4>-=</h4>
+	<p><i>v -= e</i> - decrements v with e</p>
+
+	<h4>*=</h4>
+	<p><i>v *= e</i> - multiplies v with e</p>
+
+	<h4>/=</h4>
+	<p><i>v /= e</i> - divides v by e.</p>
+
+	<h4>%=</h4>
+	<p><i>v %= e</i> - assigns the remainder of the division of v by e to v.</p>
+
+	<h4>&gt;&gt;=</h4>
+	<p><i>v &gt;&gt;= e</i> - shifts v arithmetically to the right by e bits. </p>
+
+	<h4>&gt;&gt;&gt;=</h4>
+	<p><i>v &gt;&gt;&gt;= e</i> - shifts v logically to the right by e bits.</p>
+
+	<h4>&lt;&lt;=</h4>
+	<p><i>v &lt;&lt;= e</i> - shifts v to the left by e bits.</p>
+
+	<h4>&amp;=</h4>
+	<p><i>v &amp;= e</i> - applies a bitwise "and" to v and e and assigns the result to v.</p>
+
+	<h4>|=</h4>
+	<p><i>v |= e</i> - applies a bitwise "or" to v and e and assigns the result to v.</p>
+
+	<h4>^=</h4>
+	<p><i>v ^= e</i> - applies a bitwise "exclusive or" to v and e and assigns the result to v.</p>
+
+	<h3>Relational</h3>
+	<p>A logical "false" is represented by an integer value of 0; a logical "true" is represented by any value other than 0. Value results of relational expressions are either 0 or 1, and their tag is set to "bool:".</p>
+
+	<h4>==</h4>
+	<p><i>e1 == e2</i> - e2 results in a logical "true" if e1 is equal to e2.</p>
+
+	<h4>!=</h4>
+	<p><i>e1 != e2</i> - results in a logical "true" if e1 diﬀers from e2.</p>
+	<p>Note: the following operators may be "chained", as in the expression "e1 &lt;= e2 &lt;= e3", with the semantics that the result is "1" if all individual comparisons hold and "0" otherwise.</p>
+
+	<h4>&lt;</h4>
+	<p><i>e1 &lt; e2</i> - results in a logical "true" if e1 is smaller than e2.</p>
+
+	<h4>&lt;=</h4>
+	<p><i>e1 &lt;= e2</i> - results in a logical "true" if e1 is smaller than or equal to e2.</p>
+
+	<h4>&gt;</h4>
+	<p><i>e1 &gt; e2</i> - results in a logical "true" if e1 is greater than e2.</p>
+
+	<h4>&gt;=</h4>
+	<p><i>e1 &gt;= e2</i> - results in a logical "true" if e1 is greater than or equal to e2.</p>
+
+	<h3>Boolean</h3>
+	<p>A logical "false" is represented by an integer value of 0; a logical "true" is represented by any value other than 0. Value results of Boolean expressions are either 0 or 1, and their tag is set to "bool".</p>
+
+	<h4>!</h4>
+	<p><i>!e</i> - results to a logical "true" if e was logically "false".</p>
+
+	<h4>||</h4>
+	<p><i>e1 || e2</i> - results to a logical "true" if either e1 or e2 (or both) are logically "true". The expression e2 is only evaluated if e1 is logically "false".</p>
+
+	<h4>&amp;&amp;</h4>
+	<p><i>e1 &amp;&amp; e2</i> - results to a logical "true" if both e1 and e2 are logically "true". The expression e2 is only evaluated if e1 is logically "true".</p>
+
+	<h3>Miscellaneous</h3>
+	<h4>[ ]</h4>
+	<p><i>a[e]</i> - array index: results to cell e from array a.</p>
+
+	<h4>{ }</h4>
+	<p><i>a{e}</i> - array index: results to character e from string a.</p>
+
+	<h4>( )</h4>
+	<p><i>f(e1,e2,...eN)</i> - results to the value returned by the function f. The function is called with the arguments e1, e2, . . .eN. The order of evaluation of the arguments is undefined.</p>
+
+	<h4>? :</h4>
+	<p>e1 ? e2 : e3 - results in either e2 or e3, depending on the value of e1. The conditional expression is a compound expression with a two part operator, "?" and ":". Expression e2 is evaluated if e1 is logically "true", e3 is evaluated if e1 is logically "false".</p>
+
+	<h4>:</h4>
+	<p><i>tagname: e</i> -tag override; the value of the expression e does not change, but its tag changes. </p>
+
+	<h4>,</h4>
+	<p><i>e1, e2</i> - results in e2, e1 is evaluated before e2. If used in function argument lists or a conditional expression, the comma expression must be surrounded by parentheses.</p>
+
+	<h4>defined</h4>
+	<p><i>defined s</i> - results in the value 1 if the symbol is deﬁned. The symbol may be a constant, or a global or local variable.</p>
+
+	<h4>sizeof</h4>
+	<p><i>sizeof s</i> - results in the size in "elements" of the speciﬁed variable. For simple variables and for arrays with a single dimension, an element is a cell. For multi-dimensional arrays, the result is the number of array elements in that dimension - append [] to the array name to indicate a lower/more minor dimension. - If the size of a variable is unknown, the result is zero. - When used in a default value for a function argument, the expression is evaluation at the point of the function call, instead of in the function definition.</p>
+
+	<h4>state</h4>
+	<p><i>state s</i> - where s is the name of a state that is optionally preﬁxed with for state speciﬁers the automaton name, this operator results in the value 1 if the automatons is in the indicated state and in 0 otherwise.</p>
+
+	<h4>tagof</h4>
+	<p><i>tagof s</i> - results in the a unique number that represents the tag of the variable, the constant, the function result or the tag label. - When used in a default value for a function argument, the expression is evaluation at the point of the function call, instead of in the function definition.</p>
+
+	<h3>Operator precedence</h3>
+	<p>The table beneath groups operators with equal precedence, starting with the operator group with the highest precedence at the top of the table.</p>
+
+	<p>If the expression evaluation order is not explicitly established by parentheses, it is determined by the association rules. For example: a*b/c is equivalent with (a*b)/c because of the left-to-right association, and a=b=c is equivalent with a=(b=c).</p>
+
+
+</div>

@@ -1,0 +1,19 @@
+<?xml-stylesheet href="../common.css"?><div xmlns="http://www.w3.org/1999/xhtml">
+
+	<h2>Scripting Language Basics</h2>
+
+	<p>Game Entities are written in the Pawn Language. Some extra documentation on using the language, you can find it at http://www.compuphase.com/pawn/.</p>
+	<ul>
+		<li><a href="Scripting_Pawn.xml">Pawn Scripting</a></li>
+		<li><a href="Scripting_Pawn_Syntax.xml">Syntax</a></li>
+		<li><a href="Scripting_Pawn_Functions.xml">Functions</a></li>
+		<li><a href="Scripting_Pawn_Variables.xml">Variables</a></li>
+		<li><a href="Scripting_Pawn_ErrorCodes.xml">Error Codes</a></li>
+		<li><a href="Scripting_Pawn_Operators.xml">Operators and Expressions</a></li>
+		<li><a href="Scripting_Pawn_Statements.xml">Statements</a></li>
+	</ul>
+
+
+
+
+</div>

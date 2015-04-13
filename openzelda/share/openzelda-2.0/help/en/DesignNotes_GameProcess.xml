@@ -1,0 +1,29 @@
+<?xml-stylesheet href="../common.css"?>
+<div xmlns="http://www.w3.org/1999/xhtml">
+	<div class="navbar"><a href="DesignNotes.xml">Design Notes</a> &gt; </div>
+	<h2>Game Process</h2>
+	<p>Game Objects (Display Objects/Entities) are classed as either global or local objects. Global objects are always active, while local object are only active then their map is active.</p>
+
+	<h3>Each Frame (Basic)</h3>
+	<pre>
+  - Game World
+  |
+  |-- Global Entities
+  |
+  |-- Map
+       |
+       |-- Map Entities
+  - Update Display
+	</pre>
+
+	<h3>Game World</h3>
+	<pre>
+  - Check if View has Moved off Map
+  |- If Map is part of Section?
+  | |- Switch to neighbouring map
+  |- Else
+  | |- Stay on map
+
+	</pre>
+
+</div>

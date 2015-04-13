@@ -1,0 +1,91 @@
+****Changes****
+-You can now use a -1 layer for PutSprite to draw images behind everything. Will be useful for a paralx background.
+-CalculateAngle and GetMoveAngle should return the correct values.
+-If Screen is inside or Disableing DayNight effect should now return max brightness.
+-The Day/Night counter won't update if you disable DayNight. Should save some FPS.
+-Mask values has been changed back so not to corrupt older quests.
+-Fmod has been updated.
+-Five More keyboard keys added. (R,F,V,T, and G). Not counting the shift key You now have 19 keys. A Zelda quest uses 9 keys, so now you can have a two player game.
+Just use SetKey to change the keys around.
+- PutMask and Fill mask can be used to create masks. Try not to have too many movable masks at once or the game will lag. If you use PutMask, make sure this mask is used by a sprite or it will not work.
+- Animated tiles can be used as an animating PutSprite. Animated tiles was never really designed to be used as PutSprite so these sprites work slightly different. If you place the same animated tile in
+the screen, then your PutSprite tile will animate as well. So if you don't want it to animate, make sure there's no other animated tiles in the group or make seperate sprites.
+- Joypad enabled. You can now use a joypad in all of the quests.
+- Customizable PlayMusic. If you want music that can be changed by others. Just add your custom songs to the quests folder inside of a folder with your quest name. (EX: Test_quest qould be "quests\Test_quest\(songs here))
+Also, the name of the music file can not exist in the quest itself otherwise it can't be changed.
+-Flipping and Mirroring has been added to PutSprite, DrawImage, DrawAnim, and DrawAnimNoInc
+-InitTextBox will show answers when the message is done scrolling instead of during. Very annoying bug for long messages.
+-Image aligning has been modified to always center. So all older images may need realigning.
+-Tiles masks will override fill masks.
+-GetKey has been refixed.
+-Improved Graphics. Unless if you want to make every sprite a power of 2 or have an older computer the graphics had wavy areas in them. With a little tweaking here and there, graphics have overall improved.
+-floatatan2 bug fix
+
+****Commands****
+/* Just Add these to the top of the script */
+
+enum _PLAYERKEY {
+	KEY_ENTER,
+	KEY_LEFT,
+	KEY_RIGHT,
+	KEY_UP,
+	KEY_DOWN,
+	KEY_Q,
+	KEY_W,
+	KEY_A,
+	KEY_S,
+	KEY_E,
+	KEY_D,
+	KEY_Z,
+	KEY_X,
+	KEY_C,
+	KEY_SHIFT,
+	KEY_R,
+	KEY_F,
+	KEY_V,
+	KEY_T,
+	KEY_G
+}
+native SetKey(PLAYERKEY, NEWKEY);//overrights the keys so you can use any key on your keyboard
+native Version(); /* Version() will return 672 in oz community version */ 
+native float:floatsin(float:a);
+native float:floatcos(float:a);
+native float:floatatan2(float:x, float:y); // This can replace CalculateAngle, floatatan2(x1-x2, y1-y2)
+native isInside();//returns true if a screen is checked to be inside, otherwise returns false
+native PutMask(mask[],x,y);//Takes the mask of a sprite and places it world x/y.
+native FillMask(x,y,wid,hei,value);//Creates a square mask at any mask value (0 - 255, but not 240)
+native GetID(entity[], ID[]);//returns an entity's id.
+native UpdateWorldCo(x,y,forceupdate=false);//You can now update World Co even if it's a few pizels difference.
+native GetMusic(string[]);//If fading it returns the song it will fade to, otherwise it returns the current music.
+native PutSprite(ident[], valx, valy, vald = 1, layer = 0, r = 255, g = 255, b = 255, a = 255, rot = 0, scale = 100, flip = 0);//(flip: 0 - 3)
+native DrawImage(code[], x, y, r = 255, g = 255, b = 255, a = 255, rot = 0, scale = 100, flip = 0);//(flip: 0 - 3)
+native DrawAnim(ident[], x, y, depth, layer = 0, r = 255, g = 255, b = 255, a = 255, rot = 0, scale = 100, flip = 0);//(flip: 0 - 3)
+native DrawAnimNoInc(ident[], x, y, depth, layer = 0, r = 255, g = 255, b = 255, a = 255, rot = 0, scale = 100, flip = 0);//(flip: 0 - 3)
+native StopSound(wav[]); //stops a wav sounds if the name matches.
+
+
+// Example: strformat(dest, sizeof dest, "Hello %s. You are %d years old or as hex %x","Tom",17,17). 
+native strformat(output[], len, const format[], ...);
+native SetDayNightColor(hour,r,g,b); //changes the day/night color. Use a number lower then 0 or higher then 24 for an instant change
+enum _WindowMessage {
+ID_EXIT = 40001,
+ID_640480 = 40003,
+ID_800600 = 40004,
+ID_320240 = 40005,
+ID_1024768 = 40006,
+ID_LOAD = 40008,
+ID_SAVEGAME = 40009,
+ID_LOADGAME = 40010,
+ID_CHANGEVIDEO = 40011,
+ID_SHOWFPS = 40012,
+ID_16_BIT = 40014,
+ID_32_BIT = 40015,
+ID_GAMEPAD = 40016,
+ID_FRAMELOCK = 40017,
+}
+native WindowMessage(message); //use code number or string
+
+
+native time(&hour=0,&minute=0,&second=0);//returns your computer's time
+native date(&year=0,&month=0,&day=0);//returns your computer's date
+native tickcount(&gradulary);//gets the tickcount for your computer.

@@ -1,0 +1,42 @@
+<?xml-stylesheet href="../common.css"?><div xmlns="http://www.w3.org/1999/xhtml">
+	<div class="navbar"><a href="Tutorials.xml">Tutorials</a> &gt;</div>
+	<h2>Tutorial: Hello World</h2>
+	<h3>Step 1</h3>
+	<p>Start the Editor and Create an New Game. Make sure you give it a Title.</p>
+
+	
+	<h3>Step 2</h3>
+	<p>Switch over to Maps, and open the existing 'empty' map.</p>
+
+	<h3>Step 3</h3>
+	<p>Open up the Script for the map by pressing the 'Edit Script' Button on the right side of Editor, under the Setting Tab.</p>
+	<img src="../images/editor-map-script-highlighted.png" alt=""/><br/>
+	<p>It should bring up a script that looks like:</p>
+	<pre>// To ease development, &lt;map_default&gt; may include a Init Function.
+// If You wish to use your own uncomment the next line
+//#define HASINITFUNCTION 1
+#tryinclude &lt;map_default&gt;
+#tryinclude &lt;standard>&gt;
+main()
+{
+  //Your Code
+}</pre>
+	<p>The script should just contain the 'main' function and code inside this function will be executed each frame.</p>
+	<p>Now lets replace that script with this:</p>
+	<pre>//This is a comment, any text follow the 2 / on that line will be ignored 
+main()
+{
+  /* Objects drawn with Draw only last that frame */
+  GraphicsDraw(&quot;HelloWorld&quot;, TEXT, 200, 200, 1,0,0, WHITE ); /* See Help for info on GraphicsDraw Function */
+  // ^ highlight Function and press F1 to open up Help 
+}</pre>
+	<p>and click Save.</p>
+
+	<h3>Step 4</h3>
+	<p>Select 'Play' from the Project Menu. You should see HelloWorld display on the screen.</p>
+	<img src="../images/Tutorial-001-HelloWorld.png" alt=""/>
+
+	<h3>Step 5</h3>
+	<p>Experiment.</p>
+
+</div>

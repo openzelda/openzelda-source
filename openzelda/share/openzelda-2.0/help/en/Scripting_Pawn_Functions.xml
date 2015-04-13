@@ -1,0 +1,61 @@
+<?xml-stylesheet href="../common.css"?><div xmlns="http://www.w3.org/1999/xhtml">
+	<div class="navbar"><a href="Scripting.xml">Scripting</a> &gt;</div>
+	<h2>Pawn Functions</h2>
+	<h3>Basics</h3>
+	<p>Functions are separate pieces of code, that can increase readability and allow reusing code.</p>
+	<pre>
+//Basic Function
+Function()
+{
+  return 0; // Not needed.
+}
+	</pre>
+	<p>That function doesn't do much, so let create a function that add two number together.</p>
+	<pre>
+Sum(a, b) // Accepts 2 arguments
+{
+  return (a+b);
+}
+	</pre>
+	<h3>Advance</h3>
+	<h4>Tagged Argument</h4>
+	<p>Arguments can be tagged to enhanced compile checks.</p>
+	
+	<h4>Variable Arguments</h4>
+	<p>A function that takes a variable number of arguments, uses the &quot;ellipsis&quot; operator(&quot;...&quot;) in the function header to denote the position of the first variable argument. The function can access the arguments with the functions numargs, getarg and setarg</p>
+	
+	<h4>Passing Arrays</h4>
+	<p></p>
+	<h4>Passed by reference</h4>
+	<p>Lets start of with a simple script</p>
+	<pre>
+main()
+{
+  new testa = 10;
+  TestFunction();
+  ConsoleLog(&quot;Testa = %d&quot;, testa); // 'testa' will be equal to 10
+}
+
+TestFunction(blank = 44, &amp;test = 0)
+{
+  test += 15;
+  ConsoleLog(&quot;Blank = %d&quot;, blank);
+}
+	</pre>
+
+	<p>We have a function called 'TestFunction', which has 2 arguments, 'blank' &amp; 'testa'. You should have read in Basic section that both arguments have default value, but you wondering what '&amp;' in front of 'testa'. The '&amp;' allow the function to call by reference instead of call by value. What does mean, well it allows function to change the reference variable. <br/>Lets see how that works by replace 'TestFunction();' with 'TestFunction( _, testa);'.</p>
+	<pre>
+main()
+{
+  new testa = 10;
+  TestFunction( _, testa); // We changed this line
+  ConsoleLog(&quot;Testa = %d&quot;, testa); // 'testa' should now equal to 25
+}
+	</pre>
+	<p>You should notice that Testa now equals 25 when it displayed on-screen. Please note: Arrays are always passed by reference.You may have notice that we passed '_' for the 'blank' argument, well that the placeholder for the default value.</p>
+	<h4>Positional arguments</h4>
+	<p>In the previous topic, we mention that '_' is a placeholder for the arguments default value. We could have also have use positional arguments, this allow us to set arguments in any order. To do this, we have '.' followed by the name of the function argument.</p>
+	<p><em>Example:</em><pre>TestFunction(.test = testa);</pre></p>
+
+
+</div>
