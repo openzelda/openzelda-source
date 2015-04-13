@@ -51,6 +51,13 @@ package-osx:
 package-windows:
 
 
+clone-git:
+	git clone https://github.com/openzelda/content-package openzelda/share/openzelda-2.0/packages/OpenZelda-2_0-Beta1.package/ 
+	git clone https://github.com/lukesalisbury/luxengine ozengine/ 
+	git clone https://github.com/lukesalisbury/elix elix/ 
+	git clone https://github.com/lukesalisbury/meg questdesigner/
+
+
 info:
 	@echo Build Directory: $(BUILDDIR)
 	@echo Install Directory: $(INSTALLDIR)
